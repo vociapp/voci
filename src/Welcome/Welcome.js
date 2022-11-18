@@ -5,9 +5,7 @@ import React from "react";
 function Welcome() {
   return (
     <div className="App">
-      <header className="App-header">
-          <a>Welcome to VOCI</a>
-      </header>
+      <h1>Welcome to VOCI</h1>
     </div>
   );
 }
