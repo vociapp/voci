@@ -1,5 +1,6 @@
 //Needs its own css sheet
 import '../Welcome/Welcome.css';
+import React from 'react'
 
 function Cards() {
     return (
