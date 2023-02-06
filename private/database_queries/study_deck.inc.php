@@ -1,11 +1,9 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {session_start();}
-
-$deck_id = $_POST['deck_id'];
-
+$deck_id = $_SESSION['deck_id'];
 if (!isset($deck_id)){
     echo "Error. Deck has not been set";
-    include('decks.php');
+    header('Location: index.php?action=home');
 }
 else {
 
@@ -32,9 +30,13 @@ else {
     }
 
     //Store the variables, and move on.
-    $_SESSION['queue'] = $queue;
     $_SESSION['fronts'] = $fronts;
     $_SESSION['backs'] = $backs;
+    $_SESSION['front'] = "";
+    $_SESSION['back'] = "";
+
     $_SESSION['side'] = 0;
+    $_SESSION['queue'] = $queue;
+
     $_SESSION['deck_id'] = $deck_id;
 }

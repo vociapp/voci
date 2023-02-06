@@ -11,6 +11,9 @@ Dark? {
  */
  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
+
+ /* Common Themes */
+
  *{
    font-family: 'Source Code Pro', monospace;
    color: #7895B2;
@@ -39,6 +42,36 @@ Dark? {
     justify-content: space-between;
  }
 
+ .editButton{
+  width: 100px;
+  padding: 12px 12px 12px 12px;
+  margin: 12px 12px 12px 12px;
+}
+
+.mainButton{
+  height: auto;
+  width: 400px;
+  padding: 12px 12px 12px 12px;
+  margin: 12px 12px 12px 12px;
+}
+
+.addButton{
+  height: auto;
+  width: 100px;
+  padding: 12px 12px 12px 12px;
+  margin: 12px 12px 12px 12px;
+}
+
+.textField{
+  width: auto;
+  height: auto;
+  padding: 12px 12px 12px 12px;
+  margin: 12px 12px 12px 12px;
+  text-align: center;
+}
+
+/* Nav Bar */
+
  ul {
     list-style-type: none;
     margin: 0;
@@ -55,54 +88,12 @@ Dark? {
     text-decoration: none;
   }
   
-  /* Change the link color on hover */
   li a:hover {
     background-color: #7895B2;
     color: F5EFE6;
   }
 
-  .musicBox {
-    padding-top: 5%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .socials{
-    display:flex;
-    flex-direction: row;
-    width:80%;
-    justify-content: space-between;
-    margin: auto;
-    margin-top: 10%;
-  }
-
-  .social{
-    display: block;
-    padding: 10px 10px 10px 10px;
-    align-content: center;
-    display: inline-block;
-  }
-
-  .logo{
-    width:200px;
-  }
-
-  .hover_logo{
-    width:200px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-  }
-
-   .hover_logo:hover {
-    display: inline;
-    }
-
-  iframe{
-    padding: 10px 10px 10px 10px;
-  }
+  /* Cards & Decks Themes */
 
   .cards{
     width: 600px;
@@ -160,34 +151,6 @@ Dark? {
     align-content: center;
   }
 
-  .editButton{
-    width: 100px;
-    padding: 12px 12px 12px 12px;
-    margin: 12px 12px 12px 12px;
-  }
-
-  .mainButton{
-    height: auto;
-    width: 400px;
-    padding: 12px 12px 12px 12px;
-    margin: 12px 12px 12px 12px;
-  }
-
-  .addButton{
-    height: auto;
-    width: 100px;
-    padding: 12px 12px 12px 12px;
-    margin: 12px 12px 12px 12px;
-  }
-
-  .textField{
-    width: auto;
-    height: auto;
-    padding: 12px 12px 12px 12px;
-    margin: 12px 12px 12px 12px;
-    text-align: center;
-  }
-
   .newCard{
     width: 100%;
     height: auto;
@@ -212,16 +175,11 @@ Dark? {
     align-content: center;
   }
 
-  /* input {
-    height:50;
-    width: 100%;
-    padding: auto;
+  .studyCards{
+    width: 600px;
     margin: auto;
-  } */
-
-  form {
-    /* width: 100%;
-    padding: 0 auto;
-    margin: 0 auto;
-    justify-content: center; */
+    text-align: center;
+    border: #7895B2;
+    border-style: solid;
+    margin-top:15%;
   }

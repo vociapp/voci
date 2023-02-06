@@ -89,26 +89,25 @@ else if ($action == 'study_deck'){
     
     if(isset($_POST['initiate'])){
         include('../private/database_queries/study_deck.inc.php');
+        header('Location: index.php?action=study_deck');
     }
+    elseif ($_SESSION['side'] == 0){
 
-    if ($_SESSION['side'] == 0){
+        // Flip the card over, and pop the next index
         $_SESSION['side'] = 1;
         $_SESSION['index'] = array_pop($_SESSION['queue']);
+
+        // For each front facing card encountered, we set the front and back values
+        // before it is displayed
+
         $_SESSION['front'] = $_SESSION['fronts'][$_SESSION['index']];
-        $_SESSION['back'] = "";
+        $_SESSION['back'] = $_SESSION['backs'][$_SESSION['index']];
+        include('views/voci/study_deck.php');
     }
     else {
         $_SESSION['side'] = 0;
-        $_SESSION['back'] = $_SESSION['backs'][$_SESSION['index']];
+        include('views/voci/study_deck.php');
     }
-
-    include('views/voci/study_deck.php');
-}
-else if ($action == 'study_deck_front'){
-    include('views/study_deck_front.php'); 
-}
-else if ($action == 'study_deck_back'){
-    include('views/study_deck_back.php'); 
 }
 else if ($action == 'add_card'){
     include('../private/database_queries/add_card.inc.php');
