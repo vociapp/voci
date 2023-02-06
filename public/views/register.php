@@ -2,7 +2,7 @@
     <body>
         <div class="cards">
             <div class="loginCard">
-                <form action="register.inc.php" method="post">
+                <form action="?action=register" method="post">
                     <input type="text" name = "fname" placeholder="First Name">
                     <br>
                     <input type="text" name = "lname" placeholder="Last Name">

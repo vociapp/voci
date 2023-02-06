@@ -2,7 +2,7 @@
     <head>
         <link rel="stylesheet" href="views/css/styles.css">
         <meta charset="UTF-8">
-        <title>Jon's Website</title>
+        <title>voci</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
    <header>

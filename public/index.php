@@ -34,8 +34,12 @@ else if ($action == 'logout'){
     include('../private/database_queries/logout.inc.php');
     header('Location: ?action=home');
 }
-else if ($action == 'register'){
+else if ($action == 'register_view'){
     include('views/register.php'); 
+}
+else if ($action == 'register'){
+    include('../private/database_queries/register.inc.php');
+    header('Location: index.php?action=voci');
 }
 
 // User Views
