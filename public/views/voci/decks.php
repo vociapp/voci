@@ -31,8 +31,8 @@ $decks = mysqli_query($connection, $query);
             <div class="deck">
                 <form action="?action=add_deck" method="post">
                     <input type="hidden" name="user_id" value=<?php echo $_SESSION['user_id']; ?>>
-                    <input class = "mainButton" type="text" name="name">
-                    <input class="addButton" type="submit" value = "Add">
+                    <input tabindex="1" class = "mainButton" type="text" name="name">
+                    <input tabindex="2" class="addButton" type="submit" value = "Add">
                 </form>
             </div>
             <br>
