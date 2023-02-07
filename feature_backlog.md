@@ -1,5 +1,6 @@
 voci backlog:
  
+Handle wrong password
 A “study all” option, or “study selected” under decks view
 Proper input handling of all inputs everywhere, to prevent xss and sql injection
 Email confirmation system

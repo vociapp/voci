@@ -2,7 +2,7 @@
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-if (isset($email) || isset($password)){
+if (isset($email) && isset($password)){
     //Check if this username exists
     $query = "select * from users where email='$email' and password='$password'";
     $result = mysqli_query($_SESSION['connection'], $query);

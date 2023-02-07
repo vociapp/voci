@@ -22,8 +22,8 @@ $decks = mysqli_query($connection, $query);
                     </form>
                     <form method="post" action="?action=cards_view">
                         <input type="hidden" name="deck_id" value=<?php echo $deck['deck_id']; ?>>
-                        <input type="hidden" name="deck_name" value=<?php echo $deck['name']; ?>>
-                        <input class="mainButton" type="submit" value=<?php echo $deck['name'];?>>
+                        <input type="hidden" name="deck_name" value="<?php echo $deck['name']; ?>">
+                        <input class="mainButton" type="submit" value="<?php echo $deck['name'];?>">
                     </form>
                     <br>
                 </div>

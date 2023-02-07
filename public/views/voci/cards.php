@@ -39,9 +39,9 @@
             <!--Add a card-->
             <form method="post" action="?action=add_card">
                 <input type="hidden" name="deck_id" value=<?php echo $deck_id;?>>
-                <input class="textField" style="width:100%;" type="text" name="front">
-                <input class="textField" style="width:100%;" type="text" name = "back">
-                <input class="mainButton" style="width:100px;" type="submit" value="Add">
+                <input tabindex="1" class="textField" style="width:100%;" type="text" name="front">
+                <input tabindex="2" class="textField" style="width:100%;" type="text" name = "back">
+                <input tabindex="3" class="mainButton" style="width:100px;" type="submit" value="Add">
             </form>
         </div>
     </body>

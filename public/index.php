@@ -22,12 +22,10 @@ else if ($action == 'docs'){
 else if ($action == 'login'){
     include('../private/database_queries/login.inc.php');
     if (isset($_SESSION['user_id'])){
-        echo 'Successful login';
         header('Location: index.php?action=voci');
     }
     else{
-        echo 'User not recognized.';
-        header('Location: views/voci.php');
+        header('Location: index.php?action=voci');
     }
 }
 else if ($action == 'logout'){
@@ -86,28 +84,51 @@ else if ($action == 'cards_view'){
     include('views/voci/cards.php');
 }
 else if ($action == 'study_deck'){
-    
+
+    // If we have just initiated a study session, we must shuffle and setup the deck
+
     if(isset($_POST['initiate'])){
         include('../private/database_queries/study_deck.inc.php');
-        header('Location: index.php?action=study_deck');
-    }
-    elseif ($_SESSION['side'] == 0){
+        
+        // If we initiate a new study session, we must check if the deck is empty.
 
-        // Flip the card over, and pop the next index
-        $_SESSION['side'] = 1;
-        $_SESSION['index'] = array_pop($_SESSION['queue']);
+        if (isset($_SESSION['queue']) && count($_SESSION['queue']) != 0)
+            header('Location: index.php?action=study_deck');
+        else
+            header('Location: index.php?action=cards_view');
+    }   
+    else if (($_SESSION['counter']) > 0){
 
-        // For each front facing card encountered, we set the front and back values
-        // before it is displayed
+        // Two cases: We want to see the front of the card
 
-        $_SESSION['front'] = $_SESSION['fronts'][$_SESSION['index']];
-        $_SESSION['back'] = $_SESSION['backs'][$_SESSION['index']];
-        include('views/voci/study_deck.php');
+        if ($_SESSION['side'] == 0 && count($_SESSION['queue'])){
+
+            // Flip the card over, and pop the next index
+
+            $_SESSION['side'] = 1;
+            $_SESSION['index'] = array_pop($_SESSION['queue']);
+
+            // For each front facing card encountered, we set the front and back values
+            // before it is displayed
+
+            $_SESSION['front'] = $_SESSION['fronts'][$_SESSION['index']];
+            $_SESSION['back'] = $_SESSION['backs'][$_SESSION['index']];
+            include('views/voci/study_deck.php');
+        }
+
+        // Or the back.
+
+        else {
+            $_SESSION['side'] = 0;
+            $_SESSION['counter']--;
+            include('views/voci/study_deck.php');
+        }
     }
-    else {
-        $_SESSION['side'] = 0;
-        include('views/voci/study_deck.php');
-    }
+    else
+        header('Location: index.php?action=out_of_cards');
+}
+else if ($action == 'out_of_cards'){
+    include('views/voci/out_of_cards.php');
 }
 else if ($action == 'add_card'){
     include('../private/database_queries/add_card.inc.php');

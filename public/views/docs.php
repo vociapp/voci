@@ -1,5 +1,5 @@
 <html></html>
     <body>
-        <p>What is voci?</p>
+        <p style="text-align:center; margin-top: 10%;">Nothing here yet</p>
     </body>
 </html>
