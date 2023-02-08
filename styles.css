@@ -1,0 +1,184 @@
+/*
+Colours:
+Light {
+  Dark Blue: 7895B2
+  Light Blue: AEBDCA
+  Dark White: E8DFCA
+  Off White: F5EFE6
+  }
+Dark? {
+}
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+
+ /* Common Themes */
+
+ *{
+   font-family: 'Source Code Pro', monospace;
+   color: #7895B2;
+   font-weight: 1000;
+   background-color: F5EFE6;
+ }
+
+ html,body {
+    background-color:#F5EFE6;
+    width:100%;
+    height:100%;
+}
+
+ h {
+    font-size:xx-large;
+ }
+
+ p {
+    font-size: normal;
+ }
+
+ header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+
+ .editButton{
+  width: 100px;
+  padding: 12px 12px 12px 12px;
+  margin: 12px 12px 12px 12px;
+}
+
+.mainButton{
+  height: auto;
+  width: 400px;
+  padding: 12px 12px 12px 12px;
+  margin: 12px 12px 12px 12px;
+}
+
+.addButton{
+  height: auto;
+  width: 100px;
+  padding: 12px 12px 12px 12px;
+  margin: 12px 12px 12px 12px;
+}
+
+.textField{
+  width: auto;
+  height: auto;
+  padding: 12px 12px 12px 12px;
+  margin: 12px 12px 12px 12px;
+  text-align: center;
+}
+
+/* Nav Bar */
+
+ ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+ }
+
+ li a {
+    display: block;
+    color: #7895B2;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #7895B2;
+    color: F5EFE6;
+  }
+
+  /* Cards & Decks Themes */
+
+  .cards{
+    width: 600px;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+
+    /* display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+  }
+
+  .card{
+    width: 100%;
+    height: auto;
+    padding: auto;
+    margin: 20 auto;
+    border: #7895B2;
+    border-style: solid;
+    text-align: center;
+
+    /* text-align: center;
+    border: #7895B2;
+    border-style: solid;
+    align-items: center; */
+  }
+
+  .loginCard{
+    width: 100%;
+    height: auto;
+    padding: auto;
+    margin: auto;
+
+    /* text-align: center;
+    border: #7895B2;
+    border-style: solid;
+    align-items: center; */
+  }
+
+  .decks{
+    height: 100%;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+  }
+
+  .deck{
+    width: 60%;
+    height: auto;
+    padding: auto;
+    margin: auto;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .newCard{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cardsHeader{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .studyButtons{
+    display:flex;
+    flex-direction: row;
+    height: 100px;
+    align-content: center;
+  }
+
+  .studyCards{
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    border: #7895B2;
+    border-style: solid;
+  }
