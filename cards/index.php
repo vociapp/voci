@@ -17,7 +17,8 @@
             include('cards.php');
             break;
         case 'decks_view':
-            header('Location' . $app_path . 'decks');
+            header('Location: ' . $app_path . 'decks');
+            break;
         case 'delete_card':
             $card_id = filter_input(INPUT_POST, 'card_id');
             delete_card($card_id);

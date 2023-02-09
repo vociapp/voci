@@ -10,11 +10,12 @@
     // Check email and password in database
     if (valid_login($email, $password)) {
         $_SESSION['user_id'] = get_user_id($email);
+        $_SESSION['user_name'] = get_user_name($email);
         header('Location: ' . $app_path . 'decks');
+        exit;
     } 
     else {
-        $message = 'Login failed. Invalid email or password.';
-        header('Location: ' . $app_path . 'account');
+        display_error('Login failed. Invalid email or password.');
         exit;
     }
 ?>
