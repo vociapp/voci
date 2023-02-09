@@ -59,6 +59,31 @@
         return $result['user_id'];
     }
 
+    function get_user_name($email){
+        global $db;
+        $query = "select * from users where 
+            email = :email";
+        $statement = $db->prepare($query);
+        $statement->execute([
+            'email' => $email
+        ]);
+        $result = $statement->fetch();
+        $statement->closeCursor();
+        return $result['fname'];
+    }
+
+    function user_exists($email){
+        global $db;
+        $query = "select * from users where email = :email";
+        $statement = $db->prepare($query);
+        $statement->execute([
+            'email' => $email
+        ]);
+        $valid = ($statement->rowCount() == 1);
+        $statement->closeCursor();
+        return $valid;
+    }
+
     // Deck Queries
 
     function get_decks($user_id){

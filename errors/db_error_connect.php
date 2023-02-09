@@ -5,4 +5,7 @@
     <p>The database must be installed as described in appendix A.</p>
     <p>The database must be running as described in chapter 1.</p>
     <p>Error message: <?php echo $error_message; ?></p>
+    <form action="<?php echo $app_path?>">
+        <input type="submit" value="Home">
+    </form>
 </main>

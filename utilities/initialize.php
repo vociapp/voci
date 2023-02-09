@@ -1,5 +1,7 @@
 <?php
-
+// Start session to store user and cart data
+if (session_status() === PHP_SESSION_NONE) {session_start();}
+$_SESSION['user_name'] = "";
 // Document root used to navigate site
 $doc_root = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT', FILTER_SANITIZE_STRING);
 
@@ -36,7 +38,4 @@ function redirect($url) {
 
 // Always include the header
 include($doc_root . '/voci/views/header.php');
-
-// Start session to store user and cart data
-if (session_status() === PHP_SESSION_NONE) {session_start();}
 ?>

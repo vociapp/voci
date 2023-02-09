@@ -1,4 +1,4 @@
-<?php global $doc_root; ?>
+<?php global $doc_root;?>
 <html lang="en">   
     <head>
         <link rel="stylesheet" href="<?php echo $app_path . 'styles.css'; ?>">
