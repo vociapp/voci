@@ -11,7 +11,7 @@ Dark? {
  */
  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
- @media (min-width: 481px) {
+ /* @media (min-width: 481px) { */
 
     /* Common Themes */
 
@@ -49,10 +49,13 @@ Dark? {
     }
 
     h1 {
+      align-self: center;
       background-color: #7895B2;
       color: #F5EFE6;
       padding: 0px 0px;
-      width: 20vw;
+      max-width: 120px;
+      margin: 0 0 0 0;
+      margin-left: 10px;
     }
 
     p {
@@ -82,44 +85,41 @@ Dark? {
       top:0;
       left:0;
       display: flex;
-      justify-content: space-between;
+      justify-content:space-between;
       align-content: center;
       background-color: #7895B2;
       color: #F5EFE6;
-      width: 100%;
       padding: 0px 0px;
       margin-bottom: 0px;
       margin-top: 0;
       height: 60px;
     }
 
-    /* ul {
-      list-style-type: none;
-      padding: 0px 20px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      background-color: #7895B2;
-      color: #F5EFE6;
+    nav{
+      position: relative;
       height: 100%;
-      margin-top:0;
-    } */
-
-    nav {
-      display:flex;
+      display: flex;
+      background-color: #7895B2;
     }
 
     nav a {
-      display: block;
-      padding: 20px 40px;
-      text-decoration: none;
+      display: flex;
+      align-items: center;
+      height: 100%;
       background-color: #7895B2;
       color: #F5EFE6;
+      text-decoration: none;
+      padding-left: 3vw;
+      padding-right: 3vw;
     }
 
     nav a:hover {
+      display: flex;
+      align-items: center;
+      height: 100%;
       background-color: #F5EFE6;
       color: #7895B2;
+      text-decoration: none;
     }
 
     /* Home Styles */
@@ -131,15 +131,18 @@ Dark? {
 
     main.login{
       height: 100%;
+      width: 100vw;
     }
 
     form.register{
       display: flex;
       flex-direction: column;
+      flex-wrap: wrap;
     }
 
     form.register input{
-      width: 400;
+      width: 80vw;
+      max-width: 600px;
       margin-bottom: 10px;
       padding: 10px 10px;
     }
@@ -158,9 +161,10 @@ Dark? {
     }
 
     form.login{
-      width: 80%;
+      width: 100vw;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     form.login input{
@@ -170,14 +174,14 @@ Dark? {
 
     form.login input.text{
       width: 300px;
-      margin: 0px 10px;
+      margin: 10px 10px;
       background-color: white;
       text-align: center;
       font-size: large;
     }
 
     form.login input.button{
-      margin: 0px 10px;
+      margin: 10px 10px;
       background-color:#7895B2 ;
       color: #F5EFE6;
       font-size: large;
@@ -245,7 +249,7 @@ Dark? {
     section.cards-side{
       display: flex;
       flex-direction: column;
-      width: 12vw;
+      width: 20vw;
       height: auto;
       background-color:#7895B2;
       margin-top: 0;
@@ -348,6 +352,13 @@ Dark? {
       font-size: large;
     }
 
+    main.decks form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
     main.decks input:hover{
       width: 400px;
       height: 40px;
@@ -362,6 +373,7 @@ Dark? {
 
     main.decks input.add-button{
       width: 100px;
+      margin-top: 10px;
     }
 
     main.decks input.add-text{
@@ -369,289 +381,4 @@ Dark? {
       color: 7895B2;
       background-color: white;
     }
- }
-
- @media (max-width: 480px) {
-  /* Common Themes */
-
-  *{
-    font-family: 'Source Code Pro', monospace;
-    color: #7895B2;
-    font-weight: 1000;
-    background-color: #F5EFE6;
-  }
-
-  html{
-    height: 100%;
-  }
-
-    body {
-      background-color:#F5EFE6;
-      padding: 0px 0px;
-      margin: 0px 0px;
-      display:flex;
-      flex-direction: column;
-      height: 100%;
-      
-    }
-
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-  h {
-      font-size:xx-large;
-  }
-
-  p {
-      font-size: normal;
-  }
-
-  header {
-    /* position:sticky; */
-    top:0;
-    left:0;
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 1;
-    justify-content: space-between;
-    align-content: center;
-    background-color: #7895B2;
-    color: #F5EFE6;
-    width: 100%;
-  }
-
-  footer {
-    position:relative;
-    left:0px;
-    bottom:0px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    background-color: #7895B2;
-    color: #F5EFE6;
-    width: 100%;
-    height: 60px;
-  }
-
-  h1 {
-    background-color: #7895B2;
-    color: #F5EFE6;
-    padding: 0px 20px;
-  }
-
-  ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #7895B2;
-    color: #F5EFE6;
-  }
-
-  li a {
-    display: block;
-    padding: 20px 40px;
-    text-decoration: none;
-    background-color: #7895B2;
-    color: #F5EFE6;
-  }
-
-  li a:hover {
-    background-color: #F5EFE6;
-    color: #7895B2;
-  }
-
-  /* Home Styles */
-  main.home{
-    height:100%;
-  }
-
-  /* Account Styles */
-
-  main.login{
-    height: 100%;
-  }
-
-  form.register{
-    display: flex;
-    flex-direction: column;
-  }
-
-  form.register input{
-    width: 400;
-    margin-bottom: 10px;
-    padding: 10px 10px;
-  }
-
-  form.register input.button{
-    background-color: #7895B2;
-    color: #F5EFE6;
-  }
-
-  form.register input.text{
-    background-color: white;
-    color: #7895B2;
-  }
-
-  form.login{
-    width: 80%;
-    display: flex;
-    justify-content: center;
-  }
-
-  form.login input{
-    width: 200px;
-    height: 40px;
-  }
-
-  form.login input.text{
-    width: 300px;
-    margin: 0px 10px;
-    background-color: white;
-    text-align: center;
-  }
-
-  form.login input.button{
-    margin: 0px 10px;
-    background-color:#7895B2 ;
-    color: #F5EFE6;
-  }
-
-  form.login input.register{
-    margin: 50px 10px;
-    background-color:#7895B2 ;
-    color: #F5EFE6;
-  }
-
-  /* Cards Styles */
-
-  main.cards{
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-  }
-
-  main.study-cards{
-    width: 100%;
-    height:100%;
-    display:flex;
-    flex-direction: column;
-  }
-
-  aside.cards-side{
-    position: fixed;
-    top:15%;
-    left:10%;
-    background-color: transparent;
-  }
-
-  aside.cards-side input:hover{
-    width: 100;
-    padding: 20px 20px;
-    background-color:#7895B2;
-    color: #F5EFE6;
-    border: solid;
-  }
-
-  aside.cards-side input{
-    width: 100;
-    padding: 20px 20px;
-    background-color: transparent;
-    color: #7895B2;
-    border: solid;
-    border-color: #7895B2;
-  }
-
-  .card {
-    border: #7895B2;
-    border-style: solid;
-    width: 500;
-    margin-top: 10;
-    padding-left: 30;
-    padding-right: 30;
-    text-align: center;
-  }
-
-  .card form.add-deck{
-    display: inline-block;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-  }
-
-  main.cards .card input.text{
-    width: 500;
-    height: 50;
-    margin: 10px 10px 10px 10px;
-    text-align: center;
-  }
-
-  main.cards .card input.button{
-    width: 200;
-    height: 50;
-    margin: 10px 10px 10px 10px;
-  }
-
-  main.study-cards .card input.button{
-    width: 200;
-    height: 50;
-    margin: 10px 10px 10px 10px;
-  }
-
-  /* Decks Styles */
-
-  main.decks{
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  main form.deck input{
-    width: 400px;
-  }
-
-  main.decks input{
-    width: 400px;
-    height: 40px;
-    background-color: #F5EFE6;
-    color: #7895B2;
-    border: solid;
-    border-color: #7895B2;
-  }
-
-  main.decks .deck{
-    position:relative;
-    display: inline-block;
-  }
-
-  main.decks input:hover{
-    width: 400px;
-    height: 40px;
-    background-color: #7895B2;
-    color: #F5EFE6;
-  }
-
-  main.decks .decks{
-    display: flex;
-    flex-direction: column;
-  }
-
-  main.decks input.add-button{
-    width: 100px;
-  }
-
-  main.decks input.add-text{
-    width: 300px;
-    color: 7895B2;
-    background-color: white;
-  }
- }
+ /* } */

@@ -10,9 +10,9 @@
     </head>
     <body>
         <header>
-            <h1>voci.</h1>
+            <h1>voci</h1>
             <nav>
-                <a href="<?php echo $app_path; ?>">home</a>
+                <a href="<?php echo $app_path; ?>">voci</a>
                 <a href="<?php echo $app_path . 'decks'; ?>">decks</a>
                 <a href="<?php echo $app_path . 'market'; ?>">market</a>
             </nav>
