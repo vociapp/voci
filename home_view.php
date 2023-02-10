@@ -1,7 +1,5 @@
-<html>
-    <body>
-        <div class="cards" style="margin-top:15%;">
+        <main class="home">
             <h>welcome to voci.</h>
-        </div>
+        </main>
     </body>
 </html>
