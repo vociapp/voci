@@ -11,10 +11,9 @@
     <body>
         <header>
             <h1>voci.</h1>
-            <br>
-            <ul>
-                <li><a href="<?php echo $app_path; ?>">home</a></li>
-                <li><a href="<?php echo $app_path . 'decks'; ?>">voci</a></li>
-                <li><a href="<?php echo $app_path . 'market'; ?>">market</a></li>
-            </ul>
+            <nav>
+                <a href="<?php echo $app_path; ?>">home</a>
+                <a href="<?php echo $app_path . 'decks'; ?>">decks</a>
+                <a href="<?php echo $app_path . 'market'; ?>">market</a>
+            </nav>
         </header>

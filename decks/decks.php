@@ -34,10 +34,10 @@ $decks = get_decks($user_id);
         <br>
         <!-- Footer Section -->
         <footer>
-            <ul>
-                <li><a href="?logout=true">log out</a></li>
-                <li><a href="<?php echo $app_path . 'settings'; ?>">settings</a></li>
-            </ul>
+            <nav>
+                <a href="?logout=true">log out</a>
+                <a href="<?php echo $app_path . 'settings'; ?>">settings</a>
+            </nav>
         </footer>
     </body>
 </html>
