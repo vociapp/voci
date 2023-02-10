@@ -197,6 +197,69 @@ Dark? {
 
     /* Cards Styles */
 
+    main.cards{
+      width: 100%;
+      height: 100%;
+      display:flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      padding-top: 10px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    
+    /* .cards-menu{
+      height: 100%;
+      position: relative;
+      margin: 10 10 10 10;
+    } */
+
+    main.cards .add-card form{
+      width: 90vw;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main.cards .add-card form input{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      height: 60px;
+      font-size: large;
+    }
+
+    main.cards .add-card form input.text{
+      background-color: white;
+    }
+
+    main.cards .add-card form input.button{
+      border: none;
+      align-self: center;
+      padding-left: 45%;
+      padding-right: 45%;
+      padding-top: 15px;
+    }
+
+    main.cards .add-card form input.button:hover{
+      border: none;      
+      background-color:#7895B2;
+      color: #F5EFE6;
+    }
+
+    main.cards .cards{
+      height: 100%;
+      margin: 10 10 10 10;
+      border: solid;
+      border-color: #7895B2;
+      border-bottom: none;
+      border-right: none;
+      border-left: none;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      font-size: large;
+      width: 100%;
+    }
+
     .cards-grid{
       display: grid;
       grid-template-columns: 1fr 9fr;
@@ -207,36 +270,45 @@ Dark? {
 
     .card-and-delete{
       display: flex;
-      justify-content: space-between;
-      width: 80vw;
+      width: 100%;
+      flex-wrap: 1;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0 0 0;
+      padding: 10 10 10 10;
+      overflow-x: hidden;
+      min-width: 0;
     }
 
-    .card{
-      width: 80vw;
-      display:flex;
-      flex-direction: column;
-      justify-content: space-evenly;
+    .card-and-delete .card{
       text-align: center;
-      margin: 20 20 20 20;
+      margin: 10 10 10 10;
+      min-width: 0;
+      border-bottom: solid;
+      border-color: #7895B2;
+    }
+
+    .card-and-delete .card p1{
+      min-width: 0;
+      word-wrap: break-word;
+      font-size: large;
+      line-height: 2;
     }
 
     .card-and-delete form input{
-      height: 30px;
-      margin: 20 20 20 20;
+      margin: 10 10 10 10;
+      padding: 10 10 10 10;
+      border: none;
+      background-color:#F5EFE6;
+      color: #7895B2;
     }
 
-    p1{
-      width: 100%;
-      font-size: large;
-    }
-
-    .card form{
-
-    }
-
-    .card form input{
+    .card-and-delete form input:hover{
+      margin: 10 10 10 10;
+      padding: 10 10 10 10;
+      border: none;
       background-color:#7895B2;
-      color: white;
+      color: #F5EFE6;
     }
 
     /* main.study-cards{
@@ -246,41 +318,34 @@ Dark? {
       flex-direction: column;
     } */
 
-    section.cards-side{
+    /* section.cards-menu{
       display: flex;
-      flex-direction: column;
-      width: 20vw;
-      height: auto;
-      background-color:#7895B2;
-      margin-top: 0;
-      height: 100%;
-    }
-
-    section.cards-side input:hover{
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 80vw;
+      justify-content: center;
+    } */
+/* 
+    section.cards-menu form{
       width: 100%;
-      height: 15vh;
-      padding: 0px 0px;
+      margin: 10px 10px;
+    } */
+
+    /* section.cards-menu input{
+      padding: 10px 10px 10px 10px;
+    } */
+
+    /* section.cards-menu input:hover{
       background-color:#F5EFE6;
       color: #7895B2;
       border:none;
-      font-size: large;
-    }
+    } */
 
-    section.cards-side input{
-      height: 15vh;
-      width: 100%;
-      padding: 0px 0px;
+    /* section.cards-menu input{
       background-color:#7895B2;
       color: #F5EFE6;
       border:none;
-      font-size: large;
-    }
-
-    section.cards{
-      display: flex;
-      justify-content: center;
-      align-content: center;
-    }
+    } */
 
     /* .card {
       border: #7895B2;
@@ -299,10 +364,10 @@ Dark? {
       text-align: center;
     } */
 
-    .add-card{
+    /* .add-card{
       text-align: center;
-    }
-
+    } */
+/* 
     .add-card input.text{
       width: 80vw;
       height: 50;
@@ -310,19 +375,19 @@ Dark? {
       background-color: white;
       color: #7895B2;
       margin-top: 10px;
-    }
+    } */
 
-    .add-card input.button{
+    /* .add-card input.button{
       width: 200;
       height: 50;
       margin-top: 10px;
-    }
+    } */
 
-    main.study-cards .card input.button{
+    /* main.study-cards .card input.button{
       width: 200;
       height: 50;
       margin: 10px 10px 10px 10px;
-    }
+    } */
 
     main.cards input.text{
 
@@ -335,11 +400,23 @@ Dark? {
     /* Decks Styles */
 
     main.decks{
+      height: 100%;
+      margin: 10 10 10 10;
+      font-size: large;
       width: 100%;
-      display:flex;
-      flex-direction: column;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    main.decks .scrollable{
+      height: 100%;
+      overflow-y:scroll;
+      overflow-x: hidden;
+      font-size: large;
+      width: auto;
+      border: solid;
+      border-color: #7895B2;
+      padding: 10 10 10 10;
+      margin-top: 20;
     }
 
     main.decks input{
@@ -350,6 +427,7 @@ Dark? {
       border: none;
       text-align: center;
       font-size: large;
+
     }
 
     main.decks form{
@@ -371,13 +449,21 @@ Dark? {
       flex-direction: column;
     }
 
+    main.decks form.deck{
+      border:solid;
+      border-color: #7895B2;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
     main.decks input.add-button{
       width: 100px;
       margin-top: 10px;
     }
 
     main.decks input.add-text{
-      width: 300px;
+      width: 100%;
       color: 7895B2;
       background-color: white;
     }
