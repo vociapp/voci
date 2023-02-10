@@ -11,177 +11,577 @@ Dark? {
  */
  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
+ @media (min-width: 481px) {
 
- /* Common Themes */
+    /* Common Themes */
 
- *{
-   font-family: 'Source Code Pro', monospace;
-   color: #7895B2;
-   font-weight: 1000;
-   background-color: F5EFE6;
+    *{
+      font-family: 'Source Code Pro', monospace;
+      color: #7895B2;
+      font-weight: 1000;
+      background-color: #F5EFE6;
+    }
+
+    html{
+      height: 100%;
+    }
+
+      body {
+        background-color:#F5EFE6;
+        padding: 0px 0px;
+        margin: 0px 0px;
+        display:flex;
+        flex-direction: column;
+        height: 100%;
+        
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+    h {
+        font-size:xx-large;
+    }
+
+    p {
+        font-size: normal;
+    }
+
+    header {
+      /* position:sticky; */
+      top:0;
+      left:0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: center;
+      background-color: #7895B2;
+      color: #F5EFE6;
+      width: 100%;
+      padding: 20px 0px;
+      margin-bottom: 10px;
+      height: 20px;
+    }
+
+    footer {
+      position:relative;
+      left:0px;
+      bottom:0px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      background-color: #7895B2;
+      color: #F5EFE6;
+      width: 100%;
+      height: 60px;
+    }
+
+    h1 {
+      background-color: #7895B2;
+      color: #F5EFE6;
+      padding: 0px 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      background-color: #7895B2;
+      color: #F5EFE6;
+    }
+
+    li a {
+      display: block;
+      padding: 20px 40px;
+      text-decoration: none;
+      background-color: #7895B2;
+      color: #F5EFE6;
+    }
+
+    li a:hover {
+      background-color: #F5EFE6;
+      color: #7895B2;
+    }
+
+    /* Home Styles */
+    main.home{
+      height:100%;
+    }
+
+    /* Account Styles */
+
+    main.login{
+      height: 100%;
+    }
+
+    form.register{
+      display: flex;
+      flex-direction: column;
+    }
+
+    form.register input{
+      width: 400;
+      margin-bottom: 10px;
+      padding: 10px 10px;
+    }
+
+    form.register input.button{
+      background-color: #7895B2;
+      color: #F5EFE6;
+    }
+
+    form.register input.text{
+      background-color: white;
+      color: #7895B2;
+    }
+
+    form.login{
+      width: 80%;
+      display: flex;
+      justify-content: center;
+    }
+
+    form.login input{
+      width: 200px;
+      height: 40px;
+    }
+
+    form.login input.text{
+      width: 300px;
+      margin: 0px 10px;
+      background-color: white;
+      text-align: center;
+    }
+
+    form.login input.button{
+      margin: 0px 10px;
+      background-color:#7895B2 ;
+      color: #F5EFE6;
+    }
+
+    form.login input.register{
+      margin: 50px 10px;
+      background-color:#7895B2 ;
+      color: #F5EFE6;
+    }
+
+    /* Cards Styles */
+
+    main.cards{
+      width: 100%;
+      display:flex;
+      flex-direction: column;
+    }
+
+    main.study-cards{
+      width: 100%;
+      height:100%;
+      display:flex;
+      flex-direction: column;
+    }
+
+    aside.cards-side{
+      position: fixed;
+      top:15%;
+      left:10%;
+      background-color: transparent;
+    }
+
+    aside.cards-side input:hover{
+      width: 100;
+      padding: 20px 20px;
+      background-color:#7895B2;
+      color: #F5EFE6;
+      border: solid;
+    }
+
+    aside.cards-side input{
+      width: 100;
+      padding: 20px 20px;
+      background-color: transparent;
+      color: #7895B2;
+      border: solid;
+      border-color: #7895B2;
+    }
+
+    .card {
+      border: #7895B2;
+      border-style: solid;
+      width: 500;
+      margin-top: 10;
+      padding-left: 30;
+      padding-right: 30;
+      text-align: center;
+    }
+
+    .card form.add-deck{
+      display: inline-block;
+      justify-content: center;
+      align-content: center;
+      text-align: center;
+    }
+
+    main.cards .card input.text{
+      width: 500;
+      height: 50;
+      margin: 10px 10px 10px 10px;
+      text-align: center;
+    }
+
+    main.cards .card input.button{
+      width: 200;
+      height: 50;
+      margin: 10px 10px 10px 10px;
+    }
+
+    main.study-cards .card input.button{
+      width: 200;
+      height: 50;
+      margin: 10px 10px 10px 10px;
+    }
+
+    /* Decks Styles */
+
+    main.decks{
+      width: 100%;
+      display:flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    main form.deck input{
+      width: 400px;
+    }
+
+    main.decks input{
+      width: 400px;
+      height: 40px;
+      background-color: #F5EFE6;
+      color: #7895B2;
+      border: solid;
+      border-color: #7895B2;
+    }
+
+    main.decks .deck{
+      position:relative;
+      display: inline-block;
+    }
+
+    main.decks input:hover{
+      width: 400px;
+      height: 40px;
+      background-color: #7895B2;
+      color: #F5EFE6;
+    }
+
+    main.decks .decks{
+      display: flex;
+      flex-direction: column;
+    }
+
+    main.decks input.add-button{
+      width: 100px;
+    }
+
+    main.decks input.add-text{
+      width: 300px;
+      color: 7895B2;
+      background-color: white;
+    }
  }
 
- html{
-    width:100%;
-    height:100%;
- }
+ @media (max-width: 480px) {
+  /* Common Themes */
 
- html,body {
-    background-color:#F5EFE6;
-}
+  *{
+    font-family: 'Source Code Pro', monospace;
+    color: #7895B2;
+    font-weight: 1000;
+    background-color: #F5EFE6;
+  }
 
- h {
-    font-size:xx-large;
- }
+  html{
+    height: 100%;
+  }
 
- p {
-    font-size: normal;
- }
+    body {
+      background-color:#F5EFE6;
+      padding: 0px 0px;
+      margin: 0px 0px;
+      display:flex;
+      flex-direction: column;
+      height: 100%;
+      
+    }
 
- header {
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+  h {
+      font-size:xx-large;
+  }
+
+  p {
+      font-size: normal;
+  }
+
+  header {
+    /* position:sticky; */
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #7895B2;
+    color: #F5EFE6;
+    width: 100%;
+  }
+
+  footer {
+    position:relative;
+    left:0px;
+    bottom:0px;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
- }
+    justify-content: center;
+    align-content: center;
+    background-color: #7895B2;
+    color: #F5EFE6;
+    width: 100%;
+    height: 60px;
+  }
 
- .editButton{
-  width: 100px;
-  padding: 12px 12px 12px 12px;
-  margin: 12px 12px 12px 12px;
-}
+  h1 {
+    background-color: #7895B2;
+    color: #F5EFE6;
+    padding: 0px 20px;
+  }
 
-.mainButton{
-  height: auto;
-  width: 400px;
-  padding: 12px 12px 12px 12px;
-  margin: 12px 12px 12px 12px;
-}
-
-.addButton{
-  height: auto;
-  width: 100px;
-  padding: 12px 12px 12px 12px;
-  margin: 12px 12px 12px 12px;
-}
-
-.textField{
-  width: auto;
-  height: auto;
-  padding: 12px 12px 12px 12px;
-  margin: 12px 12px 12px 12px;
-  text-align: center;
-}
-
-/* Nav Bar */
-
- ul {
+  ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
- }
-
- li a {
-    display: block;
-    color: #7895B2;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover {
     background-color: #7895B2;
-    color: F5EFE6;
+    color: #F5EFE6;
   }
 
-  /* Cards & Decks Themes */
+  li a {
+    display: block;
+    padding: 20px 40px;
+    text-decoration: none;
+    background-color: #7895B2;
+    color: #F5EFE6;
+  }
 
-  .cards{
-    width: 600px;
+  li a:hover {
+    background-color: #F5EFE6;
+    color: #7895B2;
+  }
+
+  /* Home Styles */
+  main.home{
+    height:100%;
+  }
+
+  /* Account Styles */
+
+  main.login{
     height: 100%;
-    margin: auto;
-    text-align: center;
-
-    /* display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
   }
 
-  .card{
-    width: 100%;
-    height: auto;
-    padding: auto;
-    margin: 20 auto;
-    border: #7895B2;
-    border-style: solid;
-    text-align: center;
-
-    /* text-align: center;
-    border: #7895B2;
-    border-style: solid;
-    align-items: center; */
-  }
-
-  .loginCard{
-    width: 100%;
-    height: auto;
-    padding: auto;
-    margin: auto;
-
-    /* text-align: center;
-    border: #7895B2;
-    border-style: solid;
-    align-items: center; */
-  }
-
-  .decks{
-    height: 100%;
-    margin: auto;
-    padding: auto;
-    text-align: center;
-  }
-
-  .deck{
-    width: 60%;
-    height: auto;
-    padding: auto;
-    margin: auto;
-    display:flex;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .newCard{
-    width: 100%;
-    height: auto;
+  form.register{
     display: flex;
     flex-direction: column;
+  }
+
+  form.register input{
+    width: 400;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+  }
+
+  form.register input.button{
+    background-color: #7895B2;
+    color: #F5EFE6;
+  }
+
+  form.register input.text{
+    background-color: white;
+    color: #7895B2;
+  }
+
+  form.login{
+    width: 80%;
+    display: flex;
     justify-content: center;
   }
 
-  .cardsHeader{
-    display:flex;
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
-    align-content: center;
+  form.login input{
+    width: 200px;
+    height: 40px;
   }
 
-  .studyButtons{
-    display:flex;
-    flex-direction: row;
-    height: 100px;
-    align-content: center;
-  }
-
-  .studyCards{
-    width: 600px;
-    margin: auto;
+  form.login input.text{
+    width: 300px;
+    margin: 0px 10px;
+    background-color: white;
     text-align: center;
+  }
+
+  form.login input.button{
+    margin: 0px 10px;
+    background-color:#7895B2 ;
+    color: #F5EFE6;
+  }
+
+  form.login input.register{
+    margin: 50px 10px;
+    background-color:#7895B2 ;
+    color: #F5EFE6;
+  }
+
+  /* Cards Styles */
+
+  main.cards{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+  }
+
+  main.study-cards{
+    width: 100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+  }
+
+  aside.cards-side{
+    position: fixed;
+    top:15%;
+    left:10%;
+    background-color: transparent;
+  }
+
+  aside.cards-side input:hover{
+    width: 100;
+    padding: 20px 20px;
+    background-color:#7895B2;
+    color: #F5EFE6;
+    border: solid;
+  }
+
+  aside.cards-side input{
+    width: 100;
+    padding: 20px 20px;
+    background-color: transparent;
+    color: #7895B2;
+    border: solid;
+    border-color: #7895B2;
+  }
+
+  .card {
     border: #7895B2;
     border-style: solid;
+    width: 500;
+    margin-top: 10;
+    padding-left: 30;
+    padding-right: 30;
+    text-align: center;
   }
+
+  .card form.add-deck{
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+
+  main.cards .card input.text{
+    width: 500;
+    height: 50;
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+  }
+
+  main.cards .card input.button{
+    width: 200;
+    height: 50;
+    margin: 10px 10px 10px 10px;
+  }
+
+  main.study-cards .card input.button{
+    width: 200;
+    height: 50;
+    margin: 10px 10px 10px 10px;
+  }
+
+  /* Decks Styles */
+
+  main.decks{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  main form.deck input{
+    width: 400px;
+  }
+
+  main.decks input{
+    width: 400px;
+    height: 40px;
+    background-color: #F5EFE6;
+    color: #7895B2;
+    border: solid;
+    border-color: #7895B2;
+  }
+
+  main.decks .deck{
+    position:relative;
+    display: inline-block;
+  }
+
+  main.decks input:hover{
+    width: 400px;
+    height: 40px;
+    background-color: #7895B2;
+    color: #F5EFE6;
+  }
+
+  main.decks .decks{
+    display: flex;
+    flex-direction: column;
+  }
+
+  main.decks input.add-button{
+    width: 100px;
+  }
+
+  main.decks input.add-text{
+    width: 300px;
+    color: 7895B2;
+    background-color: white;
+  }
+ }
