@@ -1,6 +1,6 @@
             <main class="cards">
         <!-- Display Study modes to the left -->
-                <!-- <div class="cards-menu">    
+                <div class="cards-menu">    
                     <form method="post" action=".">
                         <input type="hidden" name="action" value="study_deck">
                         <input type="hidden" name="deck_id" value=<?php echo $_SESSION['deck_id'];?>>
@@ -10,7 +10,7 @@
 
                     <form>
                         <input type="hidden" name="deck_id" value=<?php echo $_SESSION['deck_id'];?>>
-                        <input type="submit" value="voci mode">
+                        <input type="submit" value="voci-mode">
                     </form>
 
                     <form method="post" action=".">
@@ -28,9 +28,9 @@
                     <form method="post" action="." onSubmit="return confirm('Are you sure you want to delete?')">
                         <input type="hidden" name="deck_id" value=<?php echo $_SESSION['deck_id'];?>>
                         <input type="hidden" name="action" value="delete_deck">
-                        <input type="submit" value="delete deck">
+                        <input type="submit" value="delete-deck">
                     </form>
-                </div> -->
+                </div>
         
                 <!--Add a card-->
                 <div class="add-card">

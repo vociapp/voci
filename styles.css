@@ -212,6 +212,20 @@ form.register p {
     margin-top: 10px;
     overflow: hidden;
   }
+
+  main.cards .cards-menu{
+    display: flex;
+    justify-content: center;
+  }
+
+  main.cards .cards-menu form input{
+    border: none;
+  }
+
+  main.cards .cards-menu form input:hover{
+    background-color: #7895B2;
+    color: #F5EFE6;
+  }
   
   /* .cards-menu{
     height: 100%;
@@ -229,7 +243,7 @@ form.register p {
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 60px;
+    height: 40px;
     font-size: large;
   }
 
@@ -240,9 +254,10 @@ form.register p {
   main.cards .add-card form input.button{
     border: none;
     align-self: center;
-    padding-left: 45%;
-    padding-right: 45%;
+    padding-left: 20%;
+    padding-right: 20%;
     padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   main.cards .add-card form input.button:hover{
