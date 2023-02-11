@@ -9,176 +9,500 @@ Light {
 Dark? {
 }
  */
- @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+ @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
-
+ /* @media (min-width: 481px) { */
+ 
  /* Common Themes */
-
- *{
-   font-family: 'Source Code Pro', monospace;
-   color: #7895B2;
+ 
+ * {
+   font-family: "Source Code Pro", monospace;
+   color: #7895b2;
    font-weight: 1000;
-   background-color: F5EFE6;
+   background-color: #f5efe6;
  }
-
- html,body {
-    background-color:#F5EFE6;
-    width:100%;
-    height:100%;
-}
-
+ 
+ html {
+   height: 100%;
+ }
+ 
+ body {
+   background-color: #f5efe6;
+   padding: 0px 0px;
+   margin: 0px 0px;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+ }
+ 
+ main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+ }
+ 
  h {
-    font-size:xx-large;
+   font-size: xx-large;
  }
-
+ 
+ h1 {
+   align-self: center;
+   background-color: #7895b2;
+   color: #f5efe6;
+   padding: 0px 0px;
+   max-width: 120px;
+   margin: 0 0 0 0;
+   margin-left: 10px;
+ }
+ 
  p {
-    font-size: normal;
+   font-size: normal;
  }
 
- header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
- }
+ /* Header and Footer Styles */
 
- .editButton{
-  width: 100px;
-  padding: 12px 12px 12px 12px;
-  margin: 12px 12px 12px 12px;
+footer {
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: #7895b2;
+  color: #f5efe6;
+  width: 100%;
+  height: 60px;
 }
 
-.mainButton{
-  height: auto;
-  width: 400px;
-  padding: 12px 12px 12px 12px;
-  margin: 12px 12px 12px 12px;
+header {
+  /* position:sticky; */
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background-color: #7895b2;
+  color: #f5efe6;
+  padding: 0px 0px;
+  margin-bottom: 0px;
+  margin-top: 0;
+  height: 60px;
 }
 
-.addButton{
-  height: auto;
-  width: 100px;
-  padding: 12px 12px 12px 12px;
-  margin: 12px 12px 12px 12px;
+nav {
+  position: relative;
+  height: 100%;
+  display: flex;
+  background-color: #7895b2;
 }
 
-.textField{
-  width: auto;
-  height: auto;
-  padding: 12px 12px 12px 12px;
-  margin: 12px 12px 12px 12px;
+nav a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: #7895b2;
+  color: #f5efe6;
+  text-decoration: none;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+nav a:hover {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: #f5efe6;
+  color: #7895b2;
+  text-decoration: none;
+}
+
+/* Home Styles */
+main.home {
+  height: 100%;
+}
+
+/* Account Styles */
+
+main.login {
+  height: 100%;
+  width: 100vw;
+}
+
+form.register {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+form.register input {
+  width: 80vw;
+  max-width: 600px;
+  padding: 10px 10px;
+}
+
+form.register input.button {
+  background-color: #7895b2;
+  color: #f5efe6;
+  font-size: large;
+}
+
+form.register input.text {
+  background-color: white;
+  color: #7895b2;
   text-align: center;
+  font-size: large;
 }
 
-/* Nav Bar */
+form.register p {
+  font-size: medium;
+  text-align: center;
+  margin: 5px 0px 5px;
+}
 
- ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  form.login{
+    width: 100vw;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
- }
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
- li a {
-    display: block;
-    color: #7895B2;
-    padding: 8px 16px;
-    text-decoration: none;
+  form.login input{
+    width: 200px;
+    height: 40px;
+  }
+
+  form.login input.text{
+    width: 300px;
+    margin: 10px 10px;
+    background-color: white;
+    text-align: center;
+    font-size: large;
+  }
+
+  form.login input.button{
+    margin: 10px 10px;
+    background-color:#7895B2 ;
+    color: #F5EFE6;
+    font-size: large;
+
+  }
+
+  form.login input.register{
+    margin: 50px 10px;
+    background-color:#7895B2 ;
+    color: #F5EFE6;
+    font-size: large;
+  }
+
+  /* Cards Styles */
+
+  main.cards{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+    overflow: hidden;
   }
   
-  li a:hover {
-    background-color: #7895B2;
-    color: F5EFE6;
-  }
-
-  /* Cards & Decks Themes */
-
-  .cards{
-    width: 600px;
+  /* .cards-menu{
     height: 100%;
-    margin: auto;
-    text-align: center;
+    position: relative;
+    margin: 10 10 10 10;
+  } */
 
-    /* display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-  }
-
-  .card{
-    width: 100%;
-    height: auto;
-    padding: auto;
-    margin: 20 auto;
-    border: #7895B2;
-    border-style: solid;
-    text-align: center;
-
-    /* text-align: center;
-    border: #7895B2;
-    border-style: solid;
-    align-items: center; */
-  }
-
-  .loginCard{
-    width: 100%;
-    height: auto;
-    padding: auto;
-    margin: auto;
-
-    /* text-align: center;
-    border: #7895B2;
-    border-style: solid;
-    align-items: center; */
-  }
-
-  .decks{
-    height: 100%;
-    margin: auto;
-    padding: auto;
-    text-align: center;
-  }
-
-  .deck{
-    width: 60%;
-    height: auto;
-    padding: auto;
-    margin: auto;
-    display:flex;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .newCard{
-    width: 100%;
-    height: auto;
+  main.cards .add-card form{
+    width: 90vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
-  .cardsHeader{
-    display:flex;
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
-    align-content: center;
-  }
-
-  .studyButtons{
-    display:flex;
-    flex-direction: row;
-    height: 100px;
-    align-content: center;
-  }
-
-  .studyCards{
-    width: 600px;
-    margin: auto;
+  main.cards .add-card form input{
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    height: 60px;
+    font-size: large;
+  }
+
+  main.cards .add-card form input.text{
+    background-color: white;
+  }
+
+  main.cards .add-card form input.button{
+    border: none;
+    align-self: center;
+    padding-left: 45%;
+    padding-right: 45%;
+    padding-top: 15px;
+  }
+
+  main.cards .add-card form input.button:hover{
+    border: none;      
+    background-color:#7895B2;
+    color: #F5EFE6;
+  }
+
+  main.cards .cards{
+    height: 100%;
+    margin: 10 10 10 10;
+    border: solid;
+    border-color: #7895B2;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: large;
+    width: 100%;
+  }
+
+  .cards-grid{
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-rows: 1;
+    height:auto;
+    width: 100vw;
+  }
+
+  .card-and-delete{
+    display: flex;
+    width: 100%;
+    flex-wrap: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 0;
+    padding: 10 10 10 10;
+    overflow-x: hidden;
+    min-width: 0;
+  }
+
+  .card-and-delete .card{
+    text-align: center;
+    margin: 10 10 10 10;
+    min-width: 0;
+    border-bottom: solid;
+    border-color: #7895B2;
+  }
+
+  .card-and-delete .card p1{
+    min-width: 0;
+    word-wrap: break-word;
+    font-size: large;
+    line-height: 2;
+  }
+
+  .card-and-delete form input{
+    margin: 10 10 10 10;
+    padding: 10 10 10 10;
+    border: none;
+    background-color:#F5EFE6;
+    color: #7895B2;
+  }
+
+  .card-and-delete form input:hover{
+    margin: 10 10 10 10;
+    padding: 10 10 10 10;
+    border: none;
+    background-color:#7895B2;
+    color: #F5EFE6;
+  }
+
+/* main.study-cards{
+    width: 100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+  } */
+
+  /* section.cards-menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 80vw;
+    justify-content: center;
+  } */
+/* 
+  section.cards-menu form{
+    width: 100%;
+    margin: 10px 10px;
+  } */
+
+  /* section.cards-menu input{
+    padding: 10px 10px 10px 10px;
+  } */
+
+  /* section.cards-menu input:hover{
+    background-color:#F5EFE6;
+    color: #7895B2;
+    border:none;
+  } */
+
+  /* section.cards-menu input{
+    background-color:#7895B2;
+    color: #F5EFE6;
+    border:none;
+  } */
+
+section.cards-side input {
+height: 15vh;
+width: 100%;
+padding: 0px 0px;
+background-color: #7895b2;
+color: #f5efe6;
+border: none;
+font-size: large;
+}
+
+section.cards {
+display: flex;
+justify-content: center;
+align-content: center;
+}
+
+/* .card {
     border: #7895B2;
     border-style: solid;
+    width: 500;
+    margin-top: 10;
+    padding-left: 30;
+    padding-right: 30;
+    text-align: center;
+  } */
+
+/* .card form.add-deck{
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  } */
+
+  /* .add-card{
+    text-align: center;
+  } */
+/* 
+  .add-card input.text{
+    width: 80vw;
+    height: 50;
+    text-align: center;
+    background-color: white;
+    color: #7895B2;
+    margin-top: 10px;
+  } */
+
+  /* .add-card input.button{
+    width: 200;
+    height: 50;
+    margin-top: 10px;
+  } */
+
+  /* main.study-cards .card input.button{
+    width: 200;
+    height: 50;
+    margin: 10px 10px 10px 10px;
+  } */
+
+main.cards input.text {
+}
+
+main.cards input.button {
+}
+
+/* Decks Styles */
+
+main.decks {
+width: 100%;
+display: flex;
+flex-direction: column;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+main.decks input {
+width: 400px;
+height: 40px;
+background-color: #f5efe6;
+color: #7895b2;
+border: none;
+text-align: center;
+font-size: large;
+}
+
+  main.decks{
+    height: 100%;
+    margin: 10 10 10 10;
+    font-size: large;
+    width: 100%;
+    overflow: hidden;
   }
+
+  main.decks .scrollable{
+    height: 100%;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    font-size: large;
+    width: auto;
+    border: solid;
+    border-color: #7895B2;
+    padding: 10 10 10 10;
+    margin-top: 20;
+  }
+
+  main.decks input{
+    width: 400px;
+    height: 40px;
+    background-color: #F5EFE6;
+    color: #7895B2;
+    border: none;
+    text-align: center;
+    font-size: large;
+
+  }
+
+  main.decks form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  main.decks input:hover{
+    width: 400px;
+    height: 40px;
+    background-color: #7895B2;
+    color: #F5EFE6;
+  }
+
+  main.decks .decks{
+    display: flex;
+    flex-direction: column;
+  }
+
+  main.decks form.deck{
+    border:solid;
+    border-color: #7895B2;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  main.decks input.add-button{
+    width: 100px;
+    margin-top: 10px;
+  }
+
+  main.decks input.add-text{
+    width: 100%;
+    color: 7895B2;
+    background-color: white;
+  }
+  /* } */
+ 

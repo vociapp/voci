@@ -1,6 +1,11 @@
 <?php
     require_once('../utilities/initialize.php');
 
+    if (isset($_GET['logout']) == true){
+        session_destroy();
+        header('Location: ' . $app_path);
+    }
+    
     // We check if the user is logged in
     if (!isset($_SESSION['user_id']))
         header('Location: ' . $app_path . 'account');
@@ -17,7 +22,8 @@
             include('cards.php');
             break;
         case 'decks_view':
-            header('Location' . $app_path . 'decks');
+            header('Location: ' . $app_path . 'decks');
+            break;
         case 'delete_card':
             $card_id = filter_input(INPUT_POST, 'card_id');
             delete_card($card_id);
@@ -48,5 +54,19 @@
             }
             else
                 include ("out_of_cards.php");
+            break;
+        case "rename_deck":
+            $deck_id = filter_input(INPUT_POST, 'deck_id');
+            $name = filter_input(INPUT_POST, 'name');
+            rename_deck($deck_id, $name);
+            header('Location: ' . $app_path . 'cards');
+            break;
+        case "delete_deck":
+            $deck_id = filter_input(INPUT_POST, 'deck_id');
+            delete_deck($deck_id);
+            header('Location: ' . $app_path . 'decks');
+            break;
+        case "rename_deck_view":
+            include('edit_deck.php');
             break;
     }

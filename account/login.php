@@ -1,18 +1,14 @@
-<html lang="en">
-    <body>
-        <div class="cards" style="margin: auto;">
-            <div class="card" style="padding:20px 20px">
-                <form action="." method="post">
-                    <input type="hidden" name="action" value="login">
-                    <input style="text-align:center;" class="mainButton" type="email" name="email" placeholder="Email">
-                    <input style="text-align:center;" class="mainButton" type="password" name = "password" placeholder="Password">
-                    <input class="mainButton" type="submit" value="Login">
-                </form>
-                <form action="." method="post">
-                    <input type="hidden" name="action" value="register_view">
-                    <input class="mainButton" type="submit" value="Register">
-                </form>
-            </div>
-        </div>
+        <main class="login">
+            <form class="login" action="." method="post">
+                <input type="hidden" name="action" value="login">
+                <input class="text" type="email" name="email" placeholder="email">
+                <input class="text" type="password" name = "password" placeholder="password">
+                <input class="button" type="submit" value="login">
+            </form>
+            <form class="login" action="." method="post">
+                <input type="hidden" name="action" value="register_view">
+                <input class="register" class="button" type="submit" value="register">
+            </form>
+        </main>
     </body>
 </html>
