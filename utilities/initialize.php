@@ -31,7 +31,7 @@ function display_error($error_message) {
 }
 
 function redirect($url) {
-    session_write_close();
+session_write_close();
     header("Location: " . $url);
     exit;
 }

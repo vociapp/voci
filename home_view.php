@@ -1,5 +1,6 @@
-        <main class="home">
-            <h>welcome to voci.</h>
-        </main>
-    </body>
+<main class="home">
+    <h>welcome to voci.</h>
+</main>
+</body>
+
 </html>
