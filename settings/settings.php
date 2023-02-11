@@ -1,5 +1,6 @@
-        <main>
-            <h>Settings</h>
-        </main>
-    </body>
+<main>
+    <h>Settings</h>
+</main>
+</body>
+
 </html>
