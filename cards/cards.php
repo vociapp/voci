@@ -21,12 +21,6 @@
 
         <form method="post" action="." onSubmit="return confirm('Are you sure you want to delete?')">
             <input type="hidden" name="deck_id" value=<?php echo $_SESSION['deck_id'];?>>
-            <input type="hidden" name="action" value="share">
-            <input type="submit" value="share">
-        </form>
-
-        <form method="post" action="." onSubmit="return confirm('Are you sure you want to delete?')">
-            <input type="hidden" name="deck_id" value=<?php echo $_SESSION['deck_id'];?>>
             <input type="hidden" name="action" value="delete_deck">
             <input type="submit" value="delete-deck">
         </form>

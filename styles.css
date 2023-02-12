@@ -525,4 +525,29 @@ main.decks input.add-text {
   color: 7895B2;
   background-color: white;
 }
-/* } */
+
+/* Market Styles */
+
+main.market {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+section.market-tags-window {
+  flex: 1 1 auto;
+  border: 3px solid #7895b2;
+  overflow-y: scroll;
+}
+
+section.market-decks-window {
+  flex: 2 1 auto;
+  border: 3px solid #7895b2;
+  overflow-y: scroll;
+}
+
+/* @media (max-width: 481px) {
+  main.market {
+    flex-direction: column;
+  }
+} */

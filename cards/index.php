@@ -21,20 +21,24 @@ switch($action){
         $cards = get_cards($_SESSION['deck_id']);
         include('cards.php');
         break;
+        
     case 'decks_view':
         header('Location: ' . $app_path . 'decks');
         break;
+        
     case 'delete_card':
         $card_id = filter_input(INPUT_POST, 'card_id');
         delete_card($card_id);
         header('Location: ' . $app_path . 'cards');
         break;
+
     case 'add_card':
         $front = filter_input(INPUT_POST, 'front');
         $back = filter_input(INPUT_POST, 'back');
         insert_card($_SESSION['deck_id'], $front, $back);
         header('Location: ' . $app_path . 'cards');
         break;
+
     case 'study_deck':
 
         // Initialize
@@ -55,18 +59,26 @@ switch($action){
         else
             include ("out_of_cards.php");
         break;
+    
     case "rename_deck":
         $deck_id = filter_input(INPUT_POST, 'deck_id');
         $name = filter_input(INPUT_POST, 'name');
         rename_deck($deck_id, $name);
         header('Location: ' . $app_path . 'cards');
         break;
+    
     case "delete_deck":
         $deck_id = filter_input(INPUT_POST, 'deck_id');
         delete_deck($deck_id);
         header('Location: ' . $app_path . 'decks');
         break;
-    case "rename_deck_view":
+    
+        case "rename_deck_view":
         include('edit_deck.php');
+        break;
+    
+    case "share_view":
+        $deck_id = filter_input(INPUT_POST, 'deck_id');
+        $deck_name = filter_input(INPUT_POST, 'deck_name');
         break;
 }

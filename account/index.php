@@ -25,4 +25,6 @@ require_once('../utilities/initialize.php');
         include('../scripts/register.inc.php');
         header('Location: index.php');
         break;
+
+    
     }
