@@ -33,8 +33,8 @@ switch($action){
         header('Location: ' . $app_path . 'cards');
         break;
     case 'add_card':
-        $front = filter_input(INPUT_POST, 'front');
-        $back = filter_input(INPUT_POST, 'back');
+        $front = trim(htmlspecialchars(filter_input(INPUT_POST, 'front')));
+        $back = trim(htmlspecialchars(filter_input(INPUT_POST, 'back')));
         insert_card($_SESSION['deck_id'], $front, $back);
         header('Location: ' . $app_path . 'cards');
         break;
@@ -59,13 +59,13 @@ switch($action){
             include ("out_of_cards.php");
         break;
     case "rename_deck":
-        $deck_id = filter_input(INPUT_POST, 'deck_id');
-        $name = filter_input(INPUT_POST, 'name');
+        $deck_id = trim(htmlspecialchars(filter_input(INPUT_POST, 'deck_id')));
+        $name = trim(htmlspecialchars(filter_input(INPUT_POST, 'name')));
         rename_deck($deck_id, $name);
         header('Location: ' . $app_path . 'cards');
         break;
     case "delete_deck":
-        $deck_id = filter_input(INPUT_POST, 'deck_id');
+        $deck_id = trim(htmlspecialchars(filter_input(INPUT_POST, 'deck_id')));
         delete_deck($deck_id);
         header('Location: ' . $app_path . 'decks');
         break;

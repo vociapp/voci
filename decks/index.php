@@ -19,12 +19,8 @@ else
 switch($action){
     
     case "decks_view":
-        if (valid_user_id($_SESSION['user_id'])){
-            include('decks.php');
-            break;   
-        }
-        else
-            header('Location: ' . $app_path . 'account');
+        include('decks.php');
+        break;
 
     case "cards_view":
         $_SESSION['deck_id'] = filter_input(INPUT_POST, 'deck_id');
@@ -33,8 +29,8 @@ switch($action){
         break;
 
     case "add_deck":
-        $user_id = filter_input(INPUT_POST, 'user_id');
-        $name = filter_input(INPUT_POST, 'name');
+        $user_id = trim(htmlspecialchars(filter_input(INPUT_POST, 'user_id')));
+        $name = trim(htmlspecialchars(filter_input(INPUT_POST, 'name')));
 
         insert_deck($user_id, $name);
         header('Location: ' . $app_path . 'decks');

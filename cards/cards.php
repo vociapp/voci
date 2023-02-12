@@ -58,9 +58,9 @@
             </form>
 
             <div class="card">
-                <p1><?php echo $card['front'];?></p1>
+                <p1><?php echo htmlspecialchars_decode($card['front']);?></p1>
                 <br>
-                <p1><?php echo $card['back'];?></p1>
+                <p1><?php echo htmlspecialchars_decode($card['back']);?></p1>
                 <br>
             </div>
 

@@ -1,8 +1,8 @@
 <?php
-$email = htmlspecialchars(filter_input(INPUT_POST, 'email'));
-$password = htmlspecialchars(filter_input(INPUT_POST, 'password'));
-$fname = htmlspecialchars(filter_input(INPUT_POST, 'fname'));
-$lname = htmlspecialchars(filter_input(INPUT_POST, 'lname'));
+$email = trim(htmlspecialchars(filter_input(INPUT_POST, 'email')));
+$password = trim(htmlspecialchars(filter_input(INPUT_POST, 'password')));
+$fname = trim(htmlspecialchars(filter_input(INPUT_POST, 'fname')));
+$lname = trim(htmlspecialchars(filter_input(INPUT_POST, 'lname')));
 
 $errors = array();
 
