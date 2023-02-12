@@ -126,6 +126,10 @@ main.home {
   height: 100%;
 }
 
+p.home {
+  text-align: center;
+}
+
 /* Account Styles */
 
 main.login {
