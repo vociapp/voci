@@ -1,5 +1,5 @@
 <?php include 'private/shared/header.php'; ?>
-<main>
+<main class="error">
     <h1>Database Error</h1>
     <p>An error occurred connecting to the database.</p>
     <p>The database must be installed as described in appendix A.</p>

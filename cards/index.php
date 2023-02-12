@@ -35,6 +35,17 @@ switch($action){
     case 'add_card':
         $front = trim(htmlspecialchars(filter_input(INPUT_POST, 'front')));
         $back = trim(htmlspecialchars(filter_input(INPUT_POST, 'back')));
+
+        if (!empty(validate_input($front, 1000, "Front"))){
+            display_errors(validate_input($front, 1000, "Front of deck"));
+            break;
+        }
+
+        if(!empty(validate_input($back, 1000, "Back"))){
+            display_errors(validate_input($back, 1000, "Back of deck"));
+            break;
+        }
+
         insert_card($_SESSION['deck_id'], $front, $back);
         header('Location: ' . $app_path . 'cards');
         break;
@@ -61,6 +72,12 @@ switch($action){
     case "rename_deck":
         $deck_id = trim(htmlspecialchars(filter_input(INPUT_POST, 'deck_id')));
         $name = trim(htmlspecialchars(filter_input(INPUT_POST, 'name')));
+        
+        if (!empty(validate_input($name, 100, "Decks"))){
+            display_errors(validate_input($name, 100, "Decks"));
+            break;
+        }
+        
         rename_deck($deck_id, $name);
         header('Location: ' . $app_path . 'cards');
         break;

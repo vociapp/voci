@@ -32,6 +32,11 @@ switch($action){
         $user_id = trim(htmlspecialchars(filter_input(INPUT_POST, 'user_id')));
         $name = trim(htmlspecialchars(filter_input(INPUT_POST, 'name')));
 
+        if (!empty(validate_input($name, 100, "Decks"))){
+            display_errors(validate_input($name, 100, "Decks"));
+            break;
+        }
+        
         insert_deck($user_id, $name);
         header('Location: ' . $app_path . 'decks');
         break;

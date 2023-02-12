@@ -226,12 +226,6 @@ main.cards .cards-menu form input:hover {
   color: #f5efe6;
 }
 
-/* .cards-menu{
-    height: 100%;
-    position: relative;
-    margin: 10 10 10 10;
-  } */
-
 main.cards .add-card form {
   width: 90vw;
   display: flex;
@@ -330,42 +324,6 @@ main.cards .cards {
   color: #f5efe6;
 }
 
-/* main.study-cards{
-    width: 100%;
-    height:100%;
-    display:flex;
-    flex-direction: column;
-  } */
-
-/* section.cards-menu{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 80vw;
-    justify-content: center;
-  } */
-/* 
-  section.cards-menu form{
-    width: 100%;
-    margin: 10px 10px;
-  } */
-
-/* section.cards-menu input{
-    padding: 10px 10px 10px 10px;
-  } */
-
-/* section.cards-menu input:hover{
-    background-color:#F5EFE6;
-    color: #7895B2;
-    border:none;
-  } */
-
-/* section.cards-menu input{
-    background-color:#7895B2;
-    color: #F5EFE6;
-    border:none;
-  } */
-
 section.cards-side input {
   height: 15vh;
   width: 100%;
@@ -381,42 +339,6 @@ section.cards {
   justify-content: center;
   align-content: center;
 }
-
-/* .card {
-    border: #7895B2;
-    border-style: solid;
-    width: 500;
-    margin-top: 10;
-    padding-left: 30;
-    padding-right: 30;
-    text-align: center;
-  } */
-
-/* .card form.add-deck{
-    display: inline-block;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-  } */
-
-/* .add-card{
-    text-align: center;
-  } */
-/* 
-  .add-card input.text{
-    width: 80vw;
-    height: 50;
-    text-align: center;
-    background-color: white;
-    color: #7895B2;
-    margin-top: 10px;
-  } */
-
-/* .add-card input.button{
-    width: 200;
-    height: 50;
-    margin-top: 10px;
-  } */
 
 main.study-cards .card p {
   text-align: center;
@@ -525,4 +447,30 @@ main.decks input.add-text {
   color: 7895B2;
   background-color: white;
 }
-/* } */
+
+/* Error Styles */
+
+main.error {
+  display: flex;
+  flex-direction: column;
+}
+
+main.error h1 {
+  background-color: #7895b2;
+  color: #f5efe6;
+  margin-bottom: 20px;
+}
+
+input.error {
+  margin-top: 100px;
+  padding: 20 40 20 40;
+  background-color: #7895b2;
+  color: #f5efe6;
+  font-size: large;
+  border: none;
+}
+
+input.error:hover {
+  background-color: #f5efe6;
+  color: #7895b2;
+}
