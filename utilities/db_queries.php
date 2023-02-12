@@ -19,22 +19,6 @@ function insert_user($fname, $lname, $email, $password)
     $statement->closeCursor();
 }
 
-function valid_login($email, $password)
-{
-    global $db;
-    $query = "select * from users where 
-            email = :email and 
-            password = :password";
-    $statement = $db->prepare($query);
-    $statement->execute([
-        'email' => $email,
-        'password' => $password
-    ]);
-    $valid = ($statement->rowCount() == 1);
-    $statement->closeCursor();
-    return $valid;
-}
-
 function valid_user_id($user_id)
 {
     global $db;
@@ -90,11 +74,17 @@ function user_exists($email)
     return $valid;
 }
 
-function password_invalid($password)
+function retrieve_user($email)
 {
     global $db;
-    $valid = (strlen($password) < 6);
-    return $valid;
+    $query = "select * from users where email = :email";
+    $statement = $db->prepare($query);
+    $statement->execute([
+        'email' => $email
+    ]);
+    $result = $statement->fetch();
+    $statement->closeCursor();
+    return $result;
 }
 
 // Deck Queries

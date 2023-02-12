@@ -13,28 +13,22 @@ $app_path = '/' . $dirs[1] . '/';
 // Set the include path
 set_include_path($doc_root . $app_path);
 
-// Get common code
-require_once('utilities/connect.php');
-require_once('utilities/db_queries.php');
-
-// Define some common functions
 function display_db_error($error_message) {
     global $app_path;
     include 'notifications/db_error.php';
     exit;
 }
 
-function display_error($error_message) {
+function display_errors($error_messages) {
     global $app_path;
     include 'notifications/error.php';
     exit;
 }
 
-function redirect($url) {
-session_write_close();
-    header("Location: " . $url);
-    exit;
-}
+// Get common code
+require_once('utilities/connect.php');
+require_once('utilities/db_queries.php');
+require_once('utilities/validation.php');
 
 // Always include the header
 include($doc_root . '/voci/views/header.php');

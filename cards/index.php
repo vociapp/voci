@@ -4,11 +4,14 @@ require_once('../utilities/initialize.php');
 if (isset($_GET['logout']) == true){
     session_destroy();
     header('Location: ' . $app_path);
+    exit();
 }
 
 // We check if the user is logged in
-if (!isset($_SESSION['user_id']))
+if (!isset($_SESSION['user_id'])){
     header('Location: ' . $app_path . 'account');
+    exit();
+}
 
 // Check action
 if (isset($_POST['action'])) 
@@ -70,3 +73,4 @@ switch($action){
         include('edit_deck.php');
         break;
 }
+exit();

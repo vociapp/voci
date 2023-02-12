@@ -1,24 +1,36 @@
 <?php
-$email = filter_input(INPUT_POST, 'email');
-$password = filter_input(INPUT_POST, 'password');
-$fname = filter_input(INPUT_POST, 'fname');
-$lname = filter_input(INPUT_POST, 'lname');
+$email = htmlspecialchars(filter_input(INPUT_POST, 'email'));
+$password = htmlspecialchars(filter_input(INPUT_POST, 'password'));
+$fname = htmlspecialchars(filter_input(INPUT_POST, 'fname'));
+$lname = htmlspecialchars(filter_input(INPUT_POST, 'lname'));
 
+$errors = array();
 
-if (empty($email) || empty($password) || empty($fname) || empty($lname)) {
-    display_error("Please enter all fields.");
-    exit;
+// VALIDATING DATA
+
+//First name
+array_push($errors, validate_input($fname, 50, "First name"));
+//Last name
+array_push($errors, validate_input($lname, 50, "Last name"));
+//Email
+array_push($errors, validate_input($email, 320, "email"));
+array_push($errors, email_validation($email));
+//Password
+array_push($errors, validate_input($password, 50, "Password"));
+array_push($errors, password_validation($password));
+
+if (!empty($errors[0] || !empty($errors[1]) || !empty($errors[2]) || !empty($errors[3]) || !empty($errors[4]) || !empty($errors[5]) || !empty($errors[6])))
+    display_errors($errors);
+
+else{
+    // PROCESS EMAIL AND PASSWORD
+    $email_processed = email_processing($email);
+    $password_hashed = password_hash($password, PASSWORD_BCRYPT, ['const' => 10]);
+
+    //Check if email already exists
+    if (user_exists($email_processed)){
+        display_errors("A user is already using this email");
+    }
+    else
+        insert_user($fname, $lname, $email_processed, $password_hashed);
 }
-
-//Check if email already exists
-if (user_exists($email))
-    display_error("A user is already using this email");
-
-if (password_invalid($password))
-    display_error("Password must be a minimum of 6 characters!");
-//Check if password is appropriate
-
-//Check if email is appropriate
-
-insert_user($fname, $lname, $email, $password);
-exit;

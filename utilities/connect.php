@@ -10,6 +10,5 @@ try {
 } catch (PDOException $e) {
     $error_message = $e->getMessage();
     include('errors/db_error_connect.php');
-    exit();
 }
 ?>
