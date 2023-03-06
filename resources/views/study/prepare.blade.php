@@ -1,7 +1,7 @@
 <x-app-layout>
 
     {{-- Initializing Voices for Voice Selection --}}
-    <script defer>
+    <script>
 
         setTimeout(() => {
             let speech = new SpeechSynthesisUtterance();
@@ -14,7 +14,7 @@
     </script>
 
     {{-- Stopping Voice (If left running) --}}
-    <script defer type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
 
     {{-- Setup Form --}}
     <form class="w-full h-full md:w-2/3 xl:w-1/3 flex flex-col justify-center items-center rounded-md shadow-lg p-8 m-16 outline outline-1 outline-white" method="get" action="{{ route('study.initialize', $deck) }}">
