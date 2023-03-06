@@ -5,10 +5,7 @@ let read = document.getElementById("read").textContent;
 let rate = document.getElementById("rate").textContent;
 let voice_style = document.getElementById("voice_style").textContent;
 
-// Buffer
-setTimeout(() => {
-    speechSynthesis.cancel();
-}, 50);
+speechSynthesis.cancel();
 
 setTimeout(() => {
 
@@ -20,4 +17,4 @@ setTimeout(() => {
     // Activating the utterance
     speechSynthesis.speak(utterance);
 
-}, 100);
+}, 200);
