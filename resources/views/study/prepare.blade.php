@@ -40,7 +40,7 @@
 
         {{-- Speed Selection --}}
         <label>Voice Speed</label>
-        <input type="range" min="0.5" max="1.3" step="0.001" value="0.8" id="rate" name="rate" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer mb-12 slider">
+        <input type="range" min="0.7" max="1.3" step="0.001" value="1" id="rate" name="rate" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer mb-12 slider">
 
         {{-- Voice Selection --}}
         <label>Select Voice</label>
