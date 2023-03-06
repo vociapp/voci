@@ -1,9 +1,9 @@
 // This script is used in the decks view
 // It handles all of the speech recognition for that page.
 
-if ('webkitSpeechRecognition' in window) {
+if ('speechRecognition' in window) {
     
-    var recognition = new webkitSpeechRecognition();
+    var recognition = new speechRecognition();
     recognition.continuous = true;
     recognition.interimResults = true;
     recognition.lang = 'en-US';
