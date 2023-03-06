@@ -2,20 +2,18 @@
     <div class="m-auto h-screen flex flex-col justify-center items-center content-center">
 
         {{-- Card Div --}}
-        <div class="text-center rounded-md m-4 mb-8 p-4 flex flex-col justify-center w-full md:w-10/12 xl:w-2/3 shadow-lg">
-
-            @if (session('side') == 0)
-                <p id="read" class="m-8 break-word font-qs text-3xl">{{ $cards[$index]->front; }}</p>
-            
-            @else
-                <p id="read" class="m-8 break-word font-qs text-3xl">{{ $cards[$index]->back; }}</p>
-                {{ session(['index' => session('index') - 1]); }}
-            @endif
-
+        <div class="rounded-md m-4 mb-8 p-4 flex flex-col justify-center items-center w-full md:w-10/12 xl:w-2/3 shadow-lg">
+            <a href="{{ route('study.show', $deck) }}">
+                @if (session('side') == 0)
+                    <p id="read" class="m-8 break-word font-qs text-3xl text-center">{{ $cards[$index]->front; }}</p>
+                
+                @else
+                    <p id="read" class="m-8 break-word font-qs text-3xl text-center">{{ $cards[$index]->back; }}</p>
+                    {{ session(['index' => session('index') - 1]); }}
+                @endif
+            </a>
         </div>
-
-        {{-- Flip Button --}}
-        <a href="{{ route('study.show', $deck) }}"><x-primary-button>Next</x-primary-button></a>
+        <p>next | repeat | exit</p>
 
 
         {{-- ****************************************** --}}
