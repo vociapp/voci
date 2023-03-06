@@ -1,7 +1,13 @@
 // This script is used in the study/end view
 // It handles all of the speech recognition for that page.
 
-var recognition = new webkitSpeechRecognition();
+if ('SpeechRecognition' in window) {
+    var recognition = new SpeechRecognition();
+    } else if ('webkitSpeechRecognition' in window) { // Check if webkitSpeechRecognition is supported
+    var recognition = new webkitSpeechRecognition();
+    } else {
+    console.log('Speech recognition not supported');
+}
 recognition.continuous = true;
 recognition.interimResults = true;
 recognition.lang = 'en-US';

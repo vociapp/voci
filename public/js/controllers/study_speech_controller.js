@@ -3,7 +3,13 @@
 
 var currentUrl = window.location.href;
 
-var recognition = new webkitSpeechRecognition();
+if ('SpeechRecognition' in window) {
+    var recognition = new SpeechRecognition();
+    } else if ('webkitSpeechRecognition' in window) { // Check if webkitSpeechRecognition is supported
+    var recognition = new webkitSpeechRecognition();
+    } else {
+    console.log('Speech recognition not supported');
+}
 recognition.continuous = true;
 recognition.interimResults = true;
 recognition.lang = 'en-US';
