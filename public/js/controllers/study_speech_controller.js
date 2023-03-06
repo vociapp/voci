@@ -3,8 +3,8 @@
 
 var currentUrl = window.location.href;
 
-if ('webkitSpeechRecognition' in window) {
-    var recognition = new webkitSpeechRecognition();
+if ('speechRecognition' in window) {
+    var recognition = new speechRecognition();
     recognition.continuous = true;
     recognition.interimResults = true;
     recognition.lang = 'en-US';
