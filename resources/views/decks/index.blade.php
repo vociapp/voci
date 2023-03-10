@@ -30,11 +30,11 @@
                 </div>
             </div>
             
-            <div><p class="text-center">Say the name of a deck to begin studying</p></div>
             @empty
                 <p class="m-4">You have no decks.</p>               
             @endforelse
             {{  $decks->links() }}
+            <div><p class="text-center">Say the name of a deck to begin studying</p></div>
         </div>
     </div>
     <script type="text/javascript" src="{{ asset('js/controllers/decks_speech_controller.js') }}"></script>
