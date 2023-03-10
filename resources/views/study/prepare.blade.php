@@ -1,5 +1,5 @@
 <x-app-layout>
-
+    <script src="{{ asset('js/text_to_speech.js') }}"></script>
     {{-- Initializing Voices for Voice Selection --}}
     <script defer>
 
@@ -11,10 +11,34 @@
             voices_dropdown.innerHTML = voices.filter(voice => voice.lang.includes('en')).map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
         }, 50);
 
+        const button = document.getElementById("voiceEnable");
+        button.setAttribute("onclick", "welcome()");
+
+        function welcome(){
+            // Acquiring parameters to speak from php
+            let read = document.getElementById("read").textContent;
+            let rate = document.getElementById("rate").textContent;
+            let voice_style = document.getElementById("voices_dropdown").textContent;
+
+
+
+            setTimeout(() => {
+                speechSynthesis.cancel();
+                // Setting up the utterance as a global variable, so the controller scripts can access it 
+                utterance = new SpeechSynthesisUtterance(read);
+                utterance.rate = rate;
+                utterance.voice = speechSynthesis.getVoices().find(v => v.name === voice_style);
+
+                // Activating the utterance
+                speechSynthesis.speak(utterance);
+
+            }, 200);
+        }
+
     </script>
 
     {{-- Stopping Voice (If left running) --}}
-    <script defer type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
 
     {{-- Setup Form --}}
     <form class="w-full h-full md:w-2/3 xl:w-1/3 flex flex-col justify-center items-center rounded-md shadow-lg p-8 m-16 outline outline-1 outline-white" method="get" action="{{ route('study.initialize', $deck) }}">
@@ -49,7 +73,7 @@
         </select>
 
         {{-- Begin Button --}}
-        <x-primary-button class="bg-green-500 mt-8">Begin</x-primary-button>
+        <x-primary-button id="enableVoice" class="bg-green-500 mt-8">Begin</x-primary-button>
 
     </form>
 
