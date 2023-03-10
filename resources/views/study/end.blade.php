@@ -16,13 +16,12 @@
 
         </div>
 
-        <p>reshuffle | exit</p>
-
     {{-- ****************************************** --}}
     {{--              VOICE CONTROLLER              --}}
     {{-- ****************************************** --}}
 
     @if (session('voice') == "true")
+        <p>say: reshuffle | exit</p>
         {{-- Passing php parameters into JS --}}
         <div id="rate" style="display: none">{{ session('rate'); }}</div>
         <div id="voice_style" style="display: none">{{ session('voice_style'); }}</div>
