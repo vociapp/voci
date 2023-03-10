@@ -13,7 +13,7 @@
 
             {{-- Decks Button --}}
             <a href="{{ route('decks.index') }}"><x-primary-button>Decks</x-primary-button></a>
-
+            <p class="m-8">say: reshuffle | exit</p>
         </div>
 
     {{-- ****************************************** --}}
@@ -21,7 +21,6 @@
     {{-- ****************************************** --}}
 
     @if (session('voice') == "true")
-        <p>say: reshuffle | exit</p>
         {{-- Passing php parameters into JS --}}
         <div id="rate" style="display: none">{{ session('rate'); }}</div>
         <div id="voice_style" style="display: none">{{ session('voice_style'); }}</div>
