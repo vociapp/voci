@@ -2,15 +2,21 @@
 // It handles all of the speech recognition for that page.
 
 if ('SpeechRecognition' in window) {
-    var recognition = new SpeechRecognition();
+    var recognition = new window.SpeechRecognition();
     } else if ('webkitSpeechRecognition' in window) { // Check if webkitSpeechRecognition is supported
-    var recognition = new webkitSpeechRecognition();
+    var recognition = new window.webkitSpeechRecognition();
+    } else if ('mozSpeechRecognition' in window) { // Check if webkitSpeechRecognition is supported
+    var recognition = new window.mozSpeechRecognition();
+    } else if ('msSpeechRecognition' in window) { // Check if webkitSpeechRecognition is supported
+    var recognition = new window.msSpeechRecognition();
     } else {
     console.log('Speech recognition not supported');
 }
+
 recognition.continuous = true;
-recognition.interimResults = true;
+recognition.interimResults = false;
 recognition.lang = 'en-US';
+recognition.maxAlternatives = 5;
 
 // Initializing the deck names and uuids from DOM
 var deck_names = document.querySelectorAll('#deck_name');
@@ -30,6 +36,7 @@ recognition.onresult = function(event) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
+            console.log(final_transcript);
         }
     }
 

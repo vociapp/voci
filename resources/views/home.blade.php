@@ -14,6 +14,7 @@
             
             <h1 class="text-5xl font-bold">voci.</h1>
             <p class="font-qs font-thin mt-4 mb-8">(Voice Operated flashCard Interface)</p>
+            <p class="font-qs font-thin mt-4 mb-8">Please use Chrome for voice features</p>
             
             @if (Route::has('login'))
             @auth
