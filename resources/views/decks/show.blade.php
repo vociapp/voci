@@ -1,5 +1,4 @@
 <script defer type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
-<script defer type="text/javascript" src="{{ asset('js/generate_answer.js') }}"></script>
 
 <x-app-layout>
 
@@ -60,6 +59,5 @@
 
                 <x-new-button tabindex="3" type="submit" class="m-4 self-center px-32 text-xl">Add</x-new-button>
             </form>
-            <x-primary-button onclick="generate_answer()" class="m-4">Generate Answer</x-primary-button>
         </div>
 </x-app-layout>
