@@ -20,7 +20,7 @@
         {{-- ****************************************** --}}
 
         @if (session('voice') == "true")
-            <p><a href="{{ route('study.show', $deck) }}">next </a> | repeat | <a href="{{ route('decks.index') }}"> exit</a></p>
+            <p><a href="{{ route('study.show', $deck) }}">continue </a> | repeat | <a href="{{ route('decks.index') }}"> exit</a></p>
             {{-- Passing voice rate from php into JS --}}
             <div id="rate" style="display: none">{{ session('rate'); }}</div>
             <div id="voice_style" style="display: none">{{ session('voice_style'); }}</div>
