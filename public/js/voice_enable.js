@@ -29,8 +29,6 @@ function removeOverlay() {
     }
   }
   
-  
-
 window.onload = () => {
   document.addEventListener('touchstart', onFirstInteraction);
 };
