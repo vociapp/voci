@@ -33,6 +33,7 @@ recognition.onresult = function(event) {
 
     if (final_transcript.includes("flip") ||
         final_transcript.includes("next") ||
+        final_transcript.includes("continue") ||
         final_transcript.includes("skip"))
         {
         
