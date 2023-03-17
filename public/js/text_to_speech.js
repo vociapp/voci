@@ -5,16 +5,11 @@ let read = document.getElementById("read").textContent;
 let rate = document.getElementById("rate").textContent;
 let voice_style = document.getElementById("voice_style").textContent;
 
+speechSynthesis.cancel();
+// Setting up the utterance as a global variable, so the controller scripts can access it 
+utterance = new SpeechSynthesisUtterance(read);
+utterance.rate = rate;
+utterance.voice = speechSynthesis.getVoices().find(v => v.name === voice_style);
 
-
-setTimeout(() => {
-    speechSynthesis.cancel();
-    // Setting up the utterance as a global variable, so the controller scripts can access it 
-    utterance = new SpeechSynthesisUtterance(read);
-    utterance.rate = rate;
-    utterance.voice = speechSynthesis.getVoices().find(v => v.name === voice_style);
-
-    // Activating the utterance
-    speechSynthesis.speak(utterance);
-
-}, 500);
+// Activating the utterance
+speechSynthesis.speak(utterance);
