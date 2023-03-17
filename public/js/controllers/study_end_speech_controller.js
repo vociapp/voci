@@ -8,6 +8,7 @@ if ('SpeechRecognition' in window) {
     } else {
     console.log('Speech recognition not supported');
 }
+
 recognition.continuous = true;
 recognition.interimResults = true;
 recognition.lang = 'en-US';
@@ -18,10 +19,13 @@ recognition.onend = function() {
 
 recognition.onresult = function(event) {
     var final_transcript = '';
+    var interim_transcript = '';
 
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
+        } else {
+            interim_transcript += event.results[i][0].transcript;
         }
     }
 
@@ -29,7 +33,7 @@ recognition.onresult = function(event) {
     //                                      COMMANDS
     // *********************************************************************************
 
-    if (final_transcript.includes("reshuffle")){
+    if (interim_transcript.includes("reshuffle")){
         let deck_uuid = document.getElementById("deck_uuid").textContent;
         
         // Get the root URL
@@ -39,7 +43,7 @@ recognition.onresult = function(event) {
         window.location.href = rootUrl + '/study/initialize/' + deck_uuid;
 
     }
-    else if (final_transcript.includes("again")){
+    else if (interim_transcript.includes("again")){
         let deck_uuid = document.getElementById("deck_uuid").textContent;
 
         // Get the root URL
@@ -48,8 +52,8 @@ recognition.onresult = function(event) {
         // Navigate to the root directory
         window.location.href = rootUrl + '/study/initialize/' + deck_uuid;
     }
-    else if (final_transcript.includes("decks") ||
-        final_transcript.includes("exit")){
+    else if (interim_transcript.includes("decks") ||
+        interim_transcript.includes("exit")){
 
         // Get the root URL
         var rootUrl = window.location.origin;
@@ -57,8 +61,8 @@ recognition.onresult = function(event) {
         // Navigate to the root directory
         window.location.href = rootUrl + '/decks/';
     }
-    else if (final_transcript.includes("repeat") || 
-            final_transcript.includes("recite")){
+    else if (interim_transcript.includes("repeat") || 
+            interim_transcript.includes("recite")){
 
         // Run text to speech script
         speechSynthesis.speak(utterance);

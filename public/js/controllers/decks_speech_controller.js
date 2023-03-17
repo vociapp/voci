@@ -33,10 +33,13 @@ recognition.onend = function() {
 
 recognition.onresult = function(event) {
     var final_transcript = '';
+    var interim_transcript = '';
 
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
+        } else {
+            interim_transcript += event.results[i][0].transcript;
         }
     }
 
@@ -48,7 +51,7 @@ recognition.onresult = function(event) {
     for (var i = 0; i < deck_names_array.length; i++){
 
         // If a given deck name is spoken
-        if (final_transcript.toLowerCase().includes(deck_names_array[i].textContent.toLowerCase())){
+        if (interim_transcript.toLowerCase().includes(deck_names_array[i].textContent.toLowerCase())){
 
             // Study the deck
             window.location.href = window.location.origin + '/study/initialize/' + deck_uuids_array[i].textContent;
