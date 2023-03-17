@@ -2,6 +2,7 @@
 // It handles all of the speech recognition for that page.
 
 if ('SpeechRecognition' in window) {
+
     var recognition = new window.SpeechRecognition();
     } else if ('webkitSpeechRecognition' in window) { // Check if webkitSpeechRecognition is supported
     var recognition = new window.webkitSpeechRecognition();
@@ -36,7 +37,6 @@ recognition.onresult = function(event) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
-            console.log(final_transcript);
         }
     }
 

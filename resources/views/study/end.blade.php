@@ -13,7 +13,9 @@
 
             {{-- Decks Button --}}
             <a href="{{ route('decks.index') }}"><x-primary-button>Decks</x-primary-button></a>
-
+            @if (session('voice') == "true")
+                <p class="m-8">say: reshuffle | exit</p>
+            @endif
         </div>
 
         <p>reshuffle | exit</p>

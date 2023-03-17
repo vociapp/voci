@@ -1,4 +1,5 @@
 <script defer type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
+
 <x-app-layout>
 
         {{-- Name, Edit and Delete Buttons --}}
@@ -55,8 +56,8 @@
                     @error('back')
                         <div class="text-red-600 text-center">{{ $message }}</div>
                     @enderror   
-                <x-new-button tabindex="3" type="submit" class="m-4 self-center px-32 text-xl">Add</x-new-button>
 
+                <x-new-button tabindex="3" type="submit" class="m-4 self-center px-32 text-xl">Add</x-new-button>
             </form>
         </div>
 </x-app-layout>
