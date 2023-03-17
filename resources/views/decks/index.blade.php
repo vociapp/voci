@@ -1,3 +1,4 @@
+<script type="text/javascript" src="{{ asset('js/voice_enable.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/controllers/decks_speech_controller.js') }}"></script>
 
