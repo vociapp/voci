@@ -3,6 +3,8 @@
 <script type="text/javascript" src="{{ asset('js/controllers/decks_speech_controller.js') }}"></script>
 
 <x-app-layout>
+    <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; background-color: rgba(0, 0, 0, 0);"></div>
+
     <div class="mt-8 mx-0 flex flex-col items-center w-screen md:w-10/12 xl:w-2/3">
 
         {{-- Title & New Deck Div --}}

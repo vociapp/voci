@@ -13,6 +13,24 @@ function onFirstInteraction() {
   }
 }
 
+function removeOverlay() {
+    const overlay = document.getElementById('overlay');
+    if (overlay) {
+      overlay.remove();
+    }
+  }
+
+  function onFirstInteraction() {
+    if (!firstInteraction) {
+      firstInteraction = true;
+      document.removeEventListener('touchstart', onFirstInteraction);
+      speak('Hello, this is your speech synthesis on page reload!');
+      removeOverlay();
+    }
+  }
+  
+  
+
 window.onload = () => {
   document.addEventListener('touchstart', onFirstInteraction);
 };
