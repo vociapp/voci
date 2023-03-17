@@ -1,5 +1,7 @@
 <x-app-layout>
     <script src="{{ asset('js/text_to_speech.js') }}"></script>
+    {{-- Stopping Voice (If left running) --}}
+    <script type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
     {{-- Initializing Voices for Voice Selection --}}
     <script defer>
 
@@ -20,25 +22,19 @@
             let rate = document.getElementById("rate").textContent;
             let voice_style = document.getElementById("voices_dropdown").textContent;
 
+            speechSynthesis.cancel();
+            // Setting up the utterance as a global variable, so the controller scripts can access it 
+            utterance = new SpeechSynthesisUtterance(read);
+            utterance.rate = rate;
+            utterance.voice = speechSynthesis.getVoices().find(v => v.name === voice_style);
 
-
-            setTimeout(() => {
-                speechSynthesis.cancel();
-                // Setting up the utterance as a global variable, so the controller scripts can access it 
-                utterance = new SpeechSynthesisUtterance(read);
-                utterance.rate = rate;
-                utterance.voice = speechSynthesis.getVoices().find(v => v.name === voice_style);
-
-                // Activating the utterance
-                speechSynthesis.speak(utterance);
-
-            }, 200);
+            // Activating the utterance
+            speechSynthesis.speak(utterance);
         }
 
     </script>
 
-    {{-- Stopping Voice (If left running) --}}
-    <script type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
+    <button onclick="welcome()">Enable speech</button>
 
     {{-- Setup Form --}}
     <form class="w-full h-full md:w-2/3 xl:w-1/3 flex flex-col justify-center items-center rounded-md shadow-lg p-8 m-16 outline outline-1 outline-white" method="get" action="{{ route('study.initialize', $deck) }}">
