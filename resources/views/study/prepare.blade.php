@@ -13,7 +13,7 @@
         }, 50);
 
         const button = document.getElementById("voiceEnable");
-        button.setAttribute("onclick", "welcome()");
+        // button.setAttribute("onclick", "welcome()");
 
         function welcome(){
             let read = 'Welcome';
