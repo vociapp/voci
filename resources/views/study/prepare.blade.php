@@ -1,5 +1,4 @@
 <x-app-layout>
-    <script src="{{ asset('js/text_to_speech.js') }}"></script>
     {{-- Stopping Voice (If left running) --}}
     <script type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
     {{-- Initializing Voices for Voice Selection --}}
