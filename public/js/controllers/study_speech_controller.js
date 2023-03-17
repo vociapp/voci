@@ -20,10 +20,13 @@ recognition.onend = function() {
 
 recognition.onresult = function(event) {
     var final_transcript = '';
+    var interim_transcript = '';
 
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
+        } else {
+            interim_transcript += event.results[i][0].transcript;
         }
     }
     
@@ -31,15 +34,16 @@ recognition.onresult = function(event) {
     //                                      COMMANDS
     // *********************************************************************************
 
-    if (final_transcript.includes("flip") ||
-        final_transcript.includes("next") ||
-        final_transcript.includes("skip"))
+    if (interim_transcript.includes("flip") ||
+        interim_transcript.includes("next") ||
+        interim_transcript.includes("continue") ||
+        interim_transcript.includes("skip"))
         {
         
         // Simply refresh the page to proceed
         window.location.href = currentUrl;
     }
-    else if (final_transcript.includes("stop")){
+    else if (interim_transcript.includes("stop")){
         if (speechSynthesis.speaking) {
             speechSynthesis.cancel();
     
@@ -50,10 +54,10 @@ recognition.onresult = function(event) {
             sayTimeout = setTimeout(function () { say(text); }, 250);
         }
     }
-    else if (final_transcript.includes("end") ||
-            final_transcript.includes("decks") || 
-            final_transcript.includes("home") ||
-            final_transcript.includes("exit"))
+    else if (interim_transcript.includes("end") ||
+            interim_transcript.includes("decks") || 
+            interim_transcript.includes("home") ||
+            interim_transcript.includes("exit"))
         {
 
         // Find the root URL
@@ -62,8 +66,8 @@ recognition.onresult = function(event) {
         // Navigate to the decks directory
         window.location.href = rootUrl + '/decks/';
     }
-    else if (final_transcript.includes("repeat") ||
-            final_transcript.includes("recite")) {
+    else if (interim_transcript.includes("repeat") ||
+            interim_transcript.includes("recite")) {
         
         console.log("repeat");
         // Run text to speech script

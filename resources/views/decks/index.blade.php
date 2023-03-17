@@ -1,4 +1,6 @@
-<script defer type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/controllers/decks_speech_controller.js') }}"></script>
+
 <x-app-layout>
     <div class="mt-8 mx-0 flex flex-col items-center w-screen md:w-10/12 xl:w-2/3">
 
@@ -37,5 +39,4 @@
             <div><p class="text-center">Say the name of a deck to begin studying</p></div>
         </div>
     </div>
-    <script type="text/javascript" src="{{ asset('js/controllers/decks_speech_controller.js') }}"></script>
 </x-app-layout>

@@ -17,4 +17,4 @@ setTimeout(() => {
     // Activating the utterance
     speechSynthesis.speak(utterance);
 
-}, 200);
+}, 500);
