@@ -3,11 +3,14 @@
     {{-- Initializing Voices for Voice Selection --}}
     <script>
 
-        let speech = new SpeechSynthesisUtterance();
-        let voices = [];
-        const voicesDropdown = document.querySelector('[name="voice"]');
-        voices = speechSynthesis.getVoices();
-        voices_dropdown.innerHTML = voices.filter(voice => voice.lang.includes('en')).map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
+        setTimeout(() => {  
+            let speech = new SpeechSynthesisUtterance();
+            let voices = [];
+            const voicesDropdown = document.querySelector('[name="voice"]');
+            voices = speechSynthesis.getVoices();
+            voices_dropdown.innerHTML = voices.filter(voice => voice.lang.includes('en')).map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
+        }, 50);
+        
         const button = document.getElementById("voiceEnable");
 
         function initial_tts(){
