@@ -25,7 +25,7 @@
     <div class="mt-8 mx-0 flex flex-col items-center w-screen md:w-10/12 xl:w-2/3">
 
         {{-- Title & New Deck Div --}}
-        <div class="flex justify-between w-full items-center">
+        <div class="flex justify-between w-full items-center px-4">
             <h1 class="text-primary font-qs font-semibold text-3xl bg-transparent">{{ Auth::user()->name }}'s Decks </h1>
             <a class="m-4 mt-4 mb-4 rounded-md" href="{{ route('decks.create') }}"><x-new-button>New Deck</x-new-button></a>
         </div>
@@ -36,7 +36,7 @@
             @forelse ($decks as $deck)
 
             {{-- Decks Styling --}}
-            <div class="flex flex-col rounded-md mx-2 my-4 md:m-4 p-4 md:p-4 shadow-lg shadow-gray-300 outline-white outline-1 outline">
+            <div class="flex flex-col rounded-md mx-2 my-4 md:m-4 p-4 md:p-4 shadow-lg shadow-gray-300 border-white border-1 border">
 
                 {{-- Deck name & Deck uuid set --}}
                 <div id="deck_name" class="w-full"><h1 class="text-primary text-center font-qs font-semibold bg-transparent mx-4 text-2xl">{{ $deck->name }}</h1></div>

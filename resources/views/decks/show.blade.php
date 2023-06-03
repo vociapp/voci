@@ -24,7 +24,7 @@
             @forelse ($cards as $card)
 
                 {{-- Individual Card Div --}}
-                <div class="m-4 p-8 shadow-lg shadow-gray-300 outline-white outline-1 outline rounded-md">
+                <div class="m-4 p-8 shadow-lg shadow-gray-300 border-white border-1 border rounded-md">
                     <p class="font-qs font-medium text-xl text-center break-all">{{ $card->front }}</p>
                     <p class="text-center">- - -</p>
                     <p class="font-qs font-medium text-xl text-center break-all">{{ $card->back }}</p>
