@@ -9,7 +9,6 @@ function onFirstInteraction() {
   if (!firstInteraction) {
     firstInteraction = true;
     document.removeEventListener('touchstart', onFirstInteraction);
-    speak('Hello, this is your speech synthesis on page reload!');
   }
 }
 
@@ -24,7 +23,6 @@ function removeOverlay() {
     if (!firstInteraction) {
       firstInteraction = true;
       document.removeEventListener('touchstart', onFirstInteraction);
-      speak('Hello, this is your speech synthesis on page reload!');
       removeOverlay();
     }
   }
