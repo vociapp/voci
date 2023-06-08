@@ -1,3 +1,4 @@
+<script type="text/javascript" src="{{ asset('js/voice_enable.js') }}"></script>
 <x-app-layout>
     <div id="deck_uuid" style="display: none">{{ $deck->uuid; }}</div>
         <div class="h-screen flex flex-col justify-center items-center content-center">

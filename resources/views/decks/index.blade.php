@@ -1,7 +1,27 @@
+<script type="text/javascript" src="{{ asset('js/voice_enable.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/stop_speech.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/controllers/decks_speech_controller.js') }}"></script>
 
 <x-app-layout>
+    <button id="hiddenButton" style="display:none;"></button>
+    <script>
+        function speak(text) {
+            const msg = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(msg);
+        }
+
+        function onFirstInteraction() {
+            document.removeEventListener('touchstart', onFirstInteraction);
+            const hiddenButton = document.getElementById('hiddenButton');
+            hiddenButton.click();
+        }
+
+        window.onload = () => {
+            const hiddenButton = document.getElementById('hiddenButton');
+            hiddenButton.addEventListener('click', () => speak('Hello, this is your speech synthesis on page reload!'));
+            document.addEventListener('touchstart', onFirstInteraction);
+        };
+    </script>
     <div class="mt-8 mx-0 flex flex-col items-center w-screen md:w-10/12 xl:w-2/3">
 
         {{-- Title & New Deck Div --}}

@@ -2,9 +2,7 @@
 
 if (speechSynthesis.speaking) {
     
-    setTimeout(() => {
-        speechSynthesis.cancel();
-    }, 50);
+speechSynthesis.cancel();
 
     if (sayTimeout !== null)
         clearTimeout(sayTimeout);
